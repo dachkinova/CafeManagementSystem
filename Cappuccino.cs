@@ -9,7 +9,7 @@ namespace HotelMenagementSystem
     public class Cappuccino : Product
     {
         public const string nameOfCappucino = "Cappucino";
-        public const double priceOfCappuccino = 1.7;
+        public const double priceOfCappuccino = 1.9;
 
         public Cappuccino() : base(nameOfCappucino, priceOfCappuccino)
         {
