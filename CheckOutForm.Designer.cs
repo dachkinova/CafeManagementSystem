@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.ColumnHeader Product;
             this.panel2 = new System.Windows.Forms.Panel();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -45,7 +46,6 @@
             this.BackButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             Product = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -73,12 +73,24 @@
             this.panel2.Size = new System.Drawing.Size(310, 349);
             this.panel2.TabIndex = 3;
             // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "By cash",
+            "With card"});
+            this.checkedListBox1.Location = new System.Drawing.Point(171, 109);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(96, 34);
+            this.checkedListBox1.TabIndex = 14;
+            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            // 
             // button4
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Location = new System.Drawing.Point(32, 171);
+            this.button4.Location = new System.Drawing.Point(61, 175);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(235, 30);
+            this.button4.Size = new System.Drawing.Size(185, 30);
             this.button4.TabIndex = 13;
             this.button4.Text = "Pay";
             this.button4.UseVisualStyleBackColor = true;
@@ -225,18 +237,6 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Date";
             this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "By cash",
-            "With card"});
-            this.checkedListBox1.Location = new System.Drawing.Point(171, 109);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(96, 34);
-            this.checkedListBox1.TabIndex = 14;
-            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // CheckOutForm
             // 

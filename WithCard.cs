@@ -8,7 +8,10 @@ namespace HotelMenagementSystem
 {
     public class WithCard : PaymentMethod
     {
-        PaymentMethod pm2 = new WithCard();
-        
+        public override void ShowMessage()
+        {
+            ByCardPayment byCard = new ByCardPayment();
+            byCard.ShowDialog();
+        }
     }
 }

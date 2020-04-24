@@ -8,6 +8,10 @@ namespace HotelMenagementSystem
 {
     public class ByCash : PaymentMethod
     {
-        PaymentMethod pm1 = new ByCash();
+        public override void ShowMessage()
+        {
+            CashPayment byCash = new CashPayment();
+            byCash.ShowDialog();
+        }
     }
 }

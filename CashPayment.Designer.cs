@@ -67,7 +67,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(214, 76);
+            this.textBox2.Location = new System.Drawing.Point(214, 84);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(110, 28);
@@ -75,7 +75,7 @@
             // 
             // total3
             // 
-            this.total3.Location = new System.Drawing.Point(214, 30);
+            this.total3.Location = new System.Drawing.Point(214, 38);
             this.total3.Multiline = true;
             this.total3.Name = "total3";
             this.total3.Size = new System.Drawing.Size(110, 28);
@@ -86,7 +86,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(146)))), ((int)(((byte)(176)))));
-            this.ClientSize = new System.Drawing.Size(357, 205);
+            this.ClientSize = new System.Drawing.Size(356, 205);
             this.Controls.Add(this.total3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);

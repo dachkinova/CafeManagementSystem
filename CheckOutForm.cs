@@ -155,20 +155,19 @@ namespace HotelMenagementSystem
                 checkedListBox1.SetItemCheckState(iIndex, CheckState.Unchecked);
             checkedListBox1.SetItemCheckState(iSelectedIndex, CheckState.Checked);
 
-            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             if (checkedListBox1.GetItemCheckState(0) == CheckState.Checked)
             {
-                CashPayment byCash = new CashPayment(totalBill, productsList1);
-                byCash.ShowDialog();
+                PaymentMethod pm = new ByCash();
+                pm.ShowMessage();
             }
             else if (checkedListBox1.GetItemCheckState(1) == CheckState.Checked)
             {
-                ByCardPayment byCard = new ByCardPayment();
-                byCard.ShowDialog();
+                PaymentMethod pm = new WithCard();
+                pm.ShowMessage();
             }
         }
     }

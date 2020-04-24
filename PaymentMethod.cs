@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace HotelMenagementSystem
 {
-    public class PaymentMethod
+    public class PaymentMethod : CheckOutForm
     {
+        //public decimal totalBill;
+        
+        public virtual void ShowMessage()
+        {
 
+        }
     }
 
     
