@@ -19,16 +19,6 @@ namespace HotelMenagementSystem
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -41,7 +31,6 @@ namespace HotelMenagementSystem
             checkOut.ShowDialog();
         }
 
-      
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -73,72 +62,11 @@ namespace HotelMenagementSystem
             }
         }
 
-        private void RestTextBoxes()
-        {
-            Action<Control.ControlCollection> function = null;
-
-            function = (controls) =>
-            {
-                foreach (Control control in controls)
-                {
-                    if (control is TextBox)
-                    {
-                        (control as TextBox).Text = "0";
-                    }
-                    else
-                    {
-                        function(control.Controls);
-                    }
-                }
-            };
-            function(Controls);
-        }
-
-        
-
-        private void EnableTextBoxes()
-        {
-            Action<Control.ControlCollection> function = null;
-
-            function = (controls) =>
-            {
-                foreach (Control control in controls)
-                {
-                    if (control is TextBox)
-                    {
-                        (control as TextBox).Enabled = false;
-                    }
-                    else
-                    {
-                        function(control.Controls);
-                    }
-                }
-            };
-            function(Controls);
-        }
-
-        private void textBox17_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void resetButton_Click(object sender, EventArgs e)
         {
-            RestTextBoxes();
             listView1.Clear();
-            
             productsList.Clear();
-            
         }
-        private void textBoxChocoCake_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void textBoxEspresso_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void BtnCapuchino_Click(object sender, EventArgs e)
         {
             Cappuccino cap = new Cappuccino();
@@ -146,25 +74,7 @@ namespace HotelMenagementSystem
             ShowInformation(this, null);
             listView1.Items.Add(cap.ToString());
         }
-        public void ShowInformation(object sender, EventArgs e)
-        {
-            StringBuilder builder = new StringBuilder();
-            builder.AppendLine("Bill:");
-            foreach (Product pr in productsList)
-            {
-                builder.AppendLine(pr.ToString());
-            }
-            builder.AppendLine();
-
-            TotalBill.Text = (string.Format("{0}", productsList.Sum(x => x.GetTotalPrice)));
-           // Result.Text = builder.ToString();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void button4_Click(object sender, EventArgs e)
         {
             Espresso esp = new Espresso();
@@ -289,5 +199,20 @@ namespace HotelMenagementSystem
         {
             ShowInformation(this, null);
         }
+
+        public void ShowInformation(object sender, EventArgs e)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.AppendLine("Bill:");
+            foreach (Product pr in productsList)
+            {
+                builder.AppendLine(pr.ToString());
+            }
+            builder.AppendLine();
+
+            TotalBill.Text = (string.Format("{0}", productsList.Sum(x => x.GetTotalPrice)));
+            // Result.Text = builder.ToString();
+        }
+
     }
 }

@@ -37,23 +37,23 @@ namespace HotelMenagementSystem
 
             foreach (var item in productsList)
             {
+                var duplicates = productsList.GroupBy(x => x)
+                                        .Where(g => g.Count() > 1)
+                                        .Select(x => x.Key);
+
                 //listView1.Items.Add(item.ToString());
                 ListViewItem lvi = new ListViewItem(item.Name);
 
-                var q = productsList1.GroupBy(x => x)
-                .Select(g => new { Value = g.Key, Count = g.Count() })
-                .OrderByDescending(x => x.Count);
+                //var list1 = productsList1.GroupBy(x => x.Name)
+                //.Distinct()
+                //.Select(g => new { Value = g.Key, Count = g.Count() });
 
-                foreach (var x in q)
-                {
-                    lvi.SubItems.Add(x.Count.ToString());
-                }
+                //lvi.SubItems.Add(item.Count.ToString());
 
 
-                //lvi.SubItems.Add("1");
+                lvi.SubItems.Add("1");
 
-
-
+                
                 lvi.SubItems.Add(item.Price.ToString());
                 listView1.Items.Add(lvi);
             }
