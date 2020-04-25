@@ -14,11 +14,21 @@ namespace HotelMenagementSystem
 {
     public partial class ByCardPayment : Form
     {
-        public ByCardPayment()
+        public ByCardPayment(string totalBill)
         {
+           
             InitializeComponent();
+            textBox1.Text = totalBill;
             textBoxPassword.UseSystemPasswordChar = true;
         }
+
+        public string totalBill { get; private set; }
+
+        public ByCardPayment ()
+        {
+            textBox1.Text = totalBill;
+        }
+       
         private void button1_Click(object sender, EventArgs e)
         {
            if (IsValidPassword()==true && IsValidID()==true)
@@ -61,6 +71,16 @@ namespace HotelMenagementSystem
             {
                 return false;
             }
+        }
+
+        private void ByCardPayment_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

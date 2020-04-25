@@ -16,8 +16,6 @@ namespace HotelMenagementSystem
         public LoginForm()
         {
             InitializeComponent();
-           
-            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -42,7 +40,7 @@ namespace HotelMenagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if ((textBoxUsername.Text == "admin") || (textBoxPassword.Text == "1234"))
+            if ((textBoxUsername.Text == "admin") && (textBoxPassword.Text == "1234"))
             {
                 this.Hide();
                 Form1 form = new Form1();

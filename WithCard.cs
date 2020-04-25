@@ -8,9 +8,16 @@ namespace HotelMenagementSystem
 {
     public class WithCard : PaymentMethod
     {
+        private string totalBill;
+
+        public WithCard(string totalBill)
+        {
+            this.totalBill = totalBill;
+        }
+
         public override void ShowMessage()
         {
-            ByCardPayment byCard = new ByCardPayment();
+            ByCardPayment byCard = new ByCardPayment(totalBill);
             byCard.ShowDialog();
         }
     }

@@ -163,10 +163,12 @@ namespace HotelMenagementSystem
             {
                 PaymentMethod pm = new ByCash();
                 pm.ShowMessage();
+
             }
             else if (checkedListBox1.GetItemCheckState(1) == CheckState.Checked)
             {
-                PaymentMethod pm = new WithCard();
+                totalBill=textBox3.Text;
+                PaymentMethod pm = new WithCard(totalBill);
                 pm.ShowMessage();
             }
         }
