@@ -33,7 +33,11 @@ namespace HotelMenagementSystem
         {
            if (IsValidPassword()==true && IsValidID()==true)
             {
-                MessageBox.Show("Transaction completed successfully! ");
+                DialogResult dialog = MessageBox.Show("Transaction completed successfully! ");
+                if (dialog == DialogResult.OK)
+                {
+                    this.Close();
+                }
             }
             else
             {

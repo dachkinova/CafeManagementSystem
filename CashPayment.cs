@@ -33,8 +33,13 @@ namespace HotelMenagementSystem
 
         private void button_Click(object sender, EventArgs e)
         {
-            
-            MessageBox.Show("The return amount is: "+ Change().ToString());
+
+            DialogResult dialog = MessageBox.Show("The return amount is: "
+                + Change().ToString());
+            if (dialog == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
     }
 }
