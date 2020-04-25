@@ -12,10 +12,16 @@ namespace HotelMenagementSystem
 {
     public partial class CashPayment : Form
     {
-        public CashPayment()
+        public CashPayment(string totalBill)
         {
             //total3.Text = totalBill;
             InitializeComponent();
+            total3.Text = totalBill;
+        }
+
+        private void total3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

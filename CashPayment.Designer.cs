@@ -80,6 +80,7 @@
             this.total3.Name = "total3";
             this.total3.Size = new System.Drawing.Size(110, 28);
             this.total3.TabIndex = 5;
+            this.total3.TextChanged += new System.EventHandler(this.total3_TextChanged);
             // 
             // CashPayment
             // 

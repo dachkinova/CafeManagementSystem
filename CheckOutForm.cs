@@ -159,15 +159,16 @@ namespace HotelMenagementSystem
 
         private void button4_Click(object sender, EventArgs e)
         {
+            totalBill = textBox3.Text;
             if (checkedListBox1.GetItemCheckState(0) == CheckState.Checked)
             {
-                PaymentMethod pm = new ByCash();
+                PaymentMethod pm = new ByCash(totalBill);
                 pm.ShowMessage();
 
             }
             else if (checkedListBox1.GetItemCheckState(1) == CheckState.Checked)
             {
-                totalBill=textBox3.Text;
+                
                 PaymentMethod pm = new WithCard(totalBill);
                 pm.ShowMessage();
             }
