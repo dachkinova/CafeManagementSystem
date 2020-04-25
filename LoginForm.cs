@@ -42,13 +42,15 @@ namespace HotelMenagementSystem
         {
             if ((textBoxUsername.Text == "admin") && (textBoxPassword.Text == "1234"))
             {
-                this.Hide();
-                Form1 form = new Form1();
-                form.ShowDialog();
+               this.Hide();
+               Form1 form = new Form1();
+               form.ShowDialog();
             }
             else
             {
-                DialogResult wrongLogin = MessageBox.Show("Username/Password not correct", "Cafe management system");
+                DialogResult wrongLogin = 
+                    MessageBox.Show("Username/Password not correct", 
+                    "Cafe management system");
             }
             
         }

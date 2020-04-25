@@ -23,5 +23,18 @@ namespace HotelMenagementSystem
         {
 
         }
+
+        private double Change()
+        {
+            double change = double.Parse(payingAmountBox.Text) -
+                double.Parse(total3.Text);
+            return change;
+        }
+
+        private void button_Click(object sender, EventArgs e)
+        {
+            
+            MessageBox.Show("The return amount is: "+ Change().ToString());
+        }
     }
 }
