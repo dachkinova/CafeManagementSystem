@@ -36,12 +36,11 @@ namespace HotelMenagementSystem
             label5.Text = DateTime.Now.ToLongTimeString();
 
 
-            //listView1.Items.Add(item.ToString());
             var list1 = productsList1.GroupBy(x => x.Name)
                 .Distinct()
                 .Select(g => new { Value = g.Key, 
                     Count = g.Count(), 
-                    TotalPrice = g.Sum(ss => ss.Price * ss.quantity) })
+                    TotalPrice = g.Sum(s => s.Price * s.quantity) })
                 .ToList();
 
 

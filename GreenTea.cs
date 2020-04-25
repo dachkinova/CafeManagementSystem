@@ -9,7 +9,7 @@ namespace HotelMenagementSystem
     class GreenTea : Product
     {
         public const string nameOfGreenTea = "Green tea";
-        public const double priceOfGreenTea = 0.8;
+        public const double priceOfGreenTea = 1.2;
         public const int quantityProduct = 1;
 
         public GreenTea() : base(nameOfGreenTea, priceOfGreenTea, quantityProduct)
