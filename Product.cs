@@ -10,10 +10,12 @@ namespace HotelMenagementSystem
     {
         public string name;
         public double price;
-        public Product(string name, double price)
+        public double quantity;
+        public Product(string name, double price, int quantity)
         {
             this.Name = name;
             this.Price = price;
+            this.Quantity = quantity;
         }
 
         public Product()
@@ -27,7 +29,14 @@ namespace HotelMenagementSystem
             get { return this.price; }
             set { this.price = value; }
         }
-        
+
+        public double Quantity
+        {
+            get { return this.quantity; }
+            set { this.quantity = value; }
+        }
+
+
         public double GetTotalPrice 
         { 
             get { return price; } 

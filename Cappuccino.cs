@@ -10,8 +10,9 @@ namespace HotelMenagementSystem
     {
         public const string nameOfCappucino = "Cappucino";
         public const double priceOfCappuccino = 1.9;
+        public const int quantityProduct = 1;
 
-        public Cappuccino() : base(nameOfCappucino, priceOfCappuccino)
+        public Cappuccino() : base(nameOfCappucino, priceOfCappuccino, quantityProduct)
         {
         }
     }

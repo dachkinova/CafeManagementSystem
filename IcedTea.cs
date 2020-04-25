@@ -10,7 +10,8 @@ namespace HotelMenagementSystem
     {
         public const string nameOfIcedTea = "Iced tea";
         public const double priceOfIcedTea = 1.5;
-        public IcedTea() : base(nameOfIcedTea, priceOfIcedTea)
+        public const int quantityProduct = 1;
+        public IcedTea() : base(nameOfIcedTea, priceOfIcedTea, quantityProduct)
         {
         }
     }

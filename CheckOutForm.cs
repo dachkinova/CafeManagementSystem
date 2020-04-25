@@ -21,7 +21,7 @@ namespace HotelMenagementSystem
 
         public string totalBill { get; private set; }
 
-        public CheckOutForm(string totalBill, List <Product> productsList)
+        public CheckOutForm(string totalBill, List<Product> productsList)
         {
             InitializeComponent();
             ListViewItem list = new ListViewItem(Name);
@@ -35,26 +35,21 @@ namespace HotelMenagementSystem
             label6.Text = DateTime.Now.ToLongDateString();
             label5.Text = DateTime.Now.ToLongTimeString();
 
-            foreach (var item in productsList)
+
+            //listView1.Items.Add(item.ToString());
+            var list1 = productsList1.GroupBy(x => x.Name)
+                .Distinct()
+                .Select(g => new { Value = g.Key, 
+                    Count = g.Count(), 
+                    TotalPrice = g.Sum(ss => ss.Price * ss.quantity) })
+                .ToList();
+
+
+            foreach (var x in list1)
             {
-                var duplicates = productsList.GroupBy(x => x)
-                                        .Where(g => g.Count() > 1)
-                                        .Select(x => x.Key);
-
-                //listView1.Items.Add(item.ToString());
-                ListViewItem lvi = new ListViewItem(item.Name);
-
-                //var list1 = productsList1.GroupBy(x => x.Name)
-                //.Distinct()
-                //.Select(g => new { Value = g.Key, Count = g.Count() });
-
-                //lvi.SubItems.Add(item.Count.ToString());
-
-
-                lvi.SubItems.Add("1");
-
-                
-                lvi.SubItems.Add(item.Price.ToString());
+                ListViewItem lvi = new ListViewItem(x.Value.ToString());
+                lvi.SubItems.Add(x.Count.ToString());
+                lvi.SubItems.Add(x.TotalPrice.ToString());
                 listView1.Items.Add(lvi);
             }
         }
