@@ -13,10 +13,14 @@ namespace HotelMenagementSystem
     public partial class Form1 : Form
     {
         public List<Product> productsList;
+
+
         public Form1()
         {
             productsList = new List<Product>();
+            
             InitializeComponent();
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -73,6 +77,7 @@ namespace HotelMenagementSystem
             this.productsList.Add(cap);
             ShowInformation(this, null);
             listView1.Items.Add(cap.ToString());
+            LastAddedItem();
         }
         
         private void button4_Click(object sender, EventArgs e)
@@ -81,6 +86,7 @@ namespace HotelMenagementSystem
             this.productsList.Add(esp);
             ShowInformation(this, null);
             listView1.Items.Add(esp.ToString());
+            LastAddedItem();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -89,6 +95,7 @@ namespace HotelMenagementSystem
             this.productsList.Add(cl);
             ShowInformation(this, null);
             listView1.Items.Add(cl.ToString());
+            LastAddedItem();
         }
 
         private void btnMocaccino_Click(object sender, EventArgs e)
@@ -97,6 +104,7 @@ namespace HotelMenagementSystem
             this.productsList.Add(moc);
             ShowInformation(this, null);
             listView1.Items.Add(moc.ToString());
+            LastAddedItem();
         }
 
         private void btnHotChocolate_Click(object sender, EventArgs e)
@@ -105,6 +113,7 @@ namespace HotelMenagementSystem
             this.productsList.Add(hotCh);
             ShowInformation(this, null);
             listView1.Items.Add(hotCh.ToString());
+            LastAddedItem();
         }
 
         private void btnHerbTea_Click(object sender, EventArgs e)
@@ -113,6 +122,7 @@ namespace HotelMenagementSystem
             this.productsList.Add(htea);
             ShowInformation(this, null);
             listView1.Items.Add(htea.ToString());
+            LastAddedItem();
         }
 
         private void btnGreenTea_Click(object sender, EventArgs e)
@@ -121,6 +131,7 @@ namespace HotelMenagementSystem
             this.productsList.Add(gtea);
             ShowInformation(this, null);
             listView1.Items.Add(gtea.ToString());
+            LastAddedItem();
         }
 
         private void btnFruitTea_Click(object sender, EventArgs e)
@@ -129,6 +140,7 @@ namespace HotelMenagementSystem
             this.productsList.Add(ftea);
             ShowInformation(this, null);
             listView1.Items.Add(ftea.ToString());
+            LastAddedItem();
         }
 
         private void btnWater_Click(object sender, EventArgs e)
@@ -137,6 +149,7 @@ namespace HotelMenagementSystem
             this.productsList.Add(water);
             ShowInformation(this, null);
             listView1.Items.Add(water.ToString());
+            LastAddedItem();
         }
 
         private void btnSoftDrink_Click(object sender, EventArgs e)
@@ -145,6 +158,7 @@ namespace HotelMenagementSystem
             this.productsList.Add(sDrink);
             ShowInformation(this, null);
             listView1.Items.Add(sDrink.ToString());
+            LastAddedItem();
         }
 
         private void btnIcedTea_Click(object sender, EventArgs e)
@@ -153,6 +167,7 @@ namespace HotelMenagementSystem
             this.productsList.Add(itea);
             ShowInformation(this, null);
             listView1.Items.Add(itea.ToString());
+            LastAddedItem();
         }
 
         private void btnIcedCoffee_Click(object sender, EventArgs e)
@@ -161,6 +176,7 @@ namespace HotelMenagementSystem
             this.productsList.Add(icoffee);
             ShowInformation(this, null);
             listView1.Items.Add(icoffee.ToString());
+            LastAddedItem();
         }
 
         private void btnSmoothie_Click(object sender, EventArgs e)
@@ -169,6 +185,7 @@ namespace HotelMenagementSystem
             this.productsList.Add(sm);
             ShowInformation(this, null);
             listView1.Items.Add(sm.ToString());
+            LastAddedItem();
         }
 
         private void btnMilkShake_Click(object sender, EventArgs e)
@@ -177,6 +194,7 @@ namespace HotelMenagementSystem
             this.productsList.Add(msh);
             ShowInformation(this, null);
             listView1.Items.Add(msh.ToString());
+            LastAddedItem();
         }
 
         private void btnFreshJuice_Click(object sender, EventArgs e)
@@ -185,6 +203,7 @@ namespace HotelMenagementSystem
             this.productsList.Add(fj);
             ShowInformation(this, null);
             listView1.Items.Add(fj.ToString());
+            LastAddedItem();
         }
 
         private void btnLemonade_Click(object sender, EventArgs e)
@@ -193,6 +212,7 @@ namespace HotelMenagementSystem
             this.productsList.Add(lem);
             ShowInformation(this, null);
             listView1.Items.Add(lem.ToString());
+            LastAddedItem();
         }
 
         private void TotalBill_TextChanged(object sender, EventArgs e)
@@ -203,7 +223,7 @@ namespace HotelMenagementSystem
         public void ShowInformation(object sender, EventArgs e)
         {
             StringBuilder builder = new StringBuilder();
-            builder.AppendLine("Bill:");
+            //builder.AppendLine("Bill:");
             foreach (Product pr in productsList)
             {
                 builder.AppendLine(pr.ToString());
@@ -214,5 +234,18 @@ namespace HotelMenagementSystem
             // Result.Text = builder.ToString();
         }
 
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LastAddedItem ()
+        {
+            var current = productsList[productsList.Count - 1];
+
+            toolStripStatusLabelCurrent.Text = 
+                "Last added item:              " 
+                + current;
+        }
     }
 }

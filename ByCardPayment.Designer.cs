@@ -107,6 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(146)))), ((int)(((byte)(176)))));
             this.ClientSize = new System.Drawing.Size(377, 221);
             this.Controls.Add(this.textBox1);
@@ -116,6 +117,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ByCardPayment";
             this.Text = "ByCardPayment";
             this.Load += new System.EventHandler(this.ByCardPayment_Load);

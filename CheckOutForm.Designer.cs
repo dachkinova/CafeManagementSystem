@@ -101,9 +101,9 @@
             this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(32, 286);
+            this.button3.Location = new System.Drawing.Point(83, 286);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(235, 46);
+            this.button3.Size = new System.Drawing.Size(139, 46);
             this.button3.TabIndex = 10;
             this.button3.Text = "Print receipt";
             this.button3.UseVisualStyleBackColor = false;
@@ -251,6 +251,7 @@
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CheckOutForm";
             this.Text = "CheckOutForm";
             this.panel2.ResumeLayout(false);

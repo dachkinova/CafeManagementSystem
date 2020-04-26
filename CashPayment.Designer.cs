@@ -94,6 +94,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CashPayment";
             this.Text = "CashPayment";
             this.ResumeLayout(false);

@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace HotelMenagementSystem
 {
-    public class Product 
+    public abstract class Product 
     {
         public string name;
         public double price;
         public double quantity;
+        public string currentItem;
         public Product(string name, double price, int quantity)
         {
             this.Name = name;
@@ -42,6 +43,7 @@ namespace HotelMenagementSystem
             get { return price; } 
         }
 
+       
         public override string ToString()
         {
             StringBuilder builder = new StringBuilder();

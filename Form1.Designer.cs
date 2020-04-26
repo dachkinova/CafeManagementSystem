@@ -58,9 +58,13 @@ namespace HotelMenagementSystem
             this.TotalBill = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabelCurrent = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -73,7 +77,6 @@ namespace HotelMenagementSystem
             this.label1.TabIndex = 0;
             this.label1.Text = "Cafe management system";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-           
             // 
             // panel1
             // 
@@ -399,13 +402,14 @@ namespace HotelMenagementSystem
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(645, 123);
+            this.listView1.Location = new System.Drawing.Point(657, 123);
             this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(240, 248);
+            this.listView1.Size = new System.Drawing.Size(218, 248);
             this.listView1.TabIndex = 12;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -417,12 +421,55 @@ namespace HotelMenagementSystem
             this.label3.TabIndex = 20;
             this.label3.Text = "Total bill:";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(682, 105);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(167, 16);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Selected products preview";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.AutoSize = false;
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(146)))), ((int)(((byte)(176)))));
+            this.statusStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.statusStrip1.GripMargin = new System.Windows.Forms.Padding(0);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabelCurrent});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 472);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(921, 18);
+            this.statusStrip1.SizingGrip = false;
+            this.statusStrip1.Stretch = false;
+            this.statusStrip1.TabIndex = 22;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabelCurrent
+            // 
+            this.toolStripStatusLabelCurrent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(146)))), ((int)(((byte)(176)))));
+            this.toolStripStatusLabelCurrent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.toolStripStatusLabelCurrent.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripStatusLabelCurrent.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabelCurrent.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripStatusLabelCurrent.LinkColor = System.Drawing.Color.White;
+            this.toolStripStatusLabelCurrent.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripStatusLabelCurrent.Name = "toolStripStatusLabelCurrent";
+            this.toolStripStatusLabelCurrent.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripStatusLabelCurrent.Size = new System.Drawing.Size(95, 18);
+            this.toolStripStatusLabelCurrent.Text = "Last added item:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(146)))), ((int)(((byte)(176)))));
-            this.ClientSize = new System.Drawing.Size(921, 476);
+            this.ClientSize = new System.Drawing.Size(921, 490);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.TotalBill);
@@ -441,6 +488,8 @@ namespace HotelMenagementSystem
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -476,6 +525,9 @@ namespace HotelMenagementSystem
         private System.Windows.Forms.Button btnMilkShake;
         private System.Windows.Forms.Button btnFreshJuice;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelCurrent;
     }
 }
 
