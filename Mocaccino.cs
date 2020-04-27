@@ -8,9 +8,9 @@ namespace HotelMenagementSystem
 {
     public class Mocaccino : Product
     {
-        public const string nameOfMocaccino = "Mocaccino";
-        public const double priceOfMocaccino = 2.6;
-        public const int quantityProduct = 1;
+        protected const string nameOfMocaccino = "Mocaccino";
+        protected const double priceOfMocaccino = 2.6;
+        protected const int quantityProduct = 1;
 
         public Mocaccino() : base(nameOfMocaccino, priceOfMocaccino, quantityProduct)
         {

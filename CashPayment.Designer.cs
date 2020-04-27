@@ -96,6 +96,7 @@
             this.Controls.Add(this.button);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CashPayment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CashPayment";
             this.ResumeLayout(false);
             this.PerformLayout();

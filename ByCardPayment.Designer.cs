@@ -119,6 +119,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ByCardPayment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ByCardPayment";
             this.Load += new System.EventHandler(this.ByCardPayment_Load);
             this.ResumeLayout(false);

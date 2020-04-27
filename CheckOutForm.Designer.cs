@@ -75,22 +75,26 @@
             // 
             // checkedListBox1
             // 
+            this.checkedListBox1.BackColor = System.Drawing.SystemColors.Info;
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Items.AddRange(new object[] {
             "By cash",
             "With card"});
-            this.checkedListBox1.Location = new System.Drawing.Point(171, 109);
+            this.checkedListBox1.Location = new System.Drawing.Point(185, 109);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(96, 34);
+            this.checkedListBox1.Size = new System.Drawing.Size(83, 34);
             this.checkedListBox1.TabIndex = 14;
             this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // button4
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Location = new System.Drawing.Point(61, 175);
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.Location = new System.Drawing.Point(73, 159);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(185, 30);
+            this.button4.Size = new System.Drawing.Size(167, 30);
             this.button4.TabIndex = 13;
             this.button4.Text = "Pay";
             this.button4.UseVisualStyleBackColor = true;
@@ -98,7 +102,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.BackColor = System.Drawing.Color.LightGray;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button3.Location = new System.Drawing.Point(83, 286);
@@ -141,9 +145,9 @@
             // button1
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(164, 221);
+            this.button1.Location = new System.Drawing.Point(171, 221);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 46);
+            this.button1.Size = new System.Drawing.Size(103, 45);
             this.button1.TabIndex = 2;
             this.button1.Text = "Remove product";
             this.button1.UseVisualStyleBackColor = true;
@@ -152,12 +156,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(29, 109);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 16);
+            this.label1.Size = new System.Drawing.Size(127, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Payment Method";
+            this.label1.Text = "Payment Method:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
@@ -187,7 +191,7 @@
             this.Quantity,
             this.Price});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(348, 21);
+            this.listView1.Location = new System.Drawing.Point(356, 21);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(489, 431);
             this.listView1.TabIndex = 5;

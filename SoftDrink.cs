@@ -8,9 +8,9 @@ namespace HotelMenagementSystem
 {
     class SoftDrink : Product
     {
-        public const string nameOfSoftDrink = "Soft drink";
-        public const double priceOfSoftDrink = 1.6;
-        public const int quantityProduct = 1;
+        protected const string nameOfSoftDrink = "Soft drink";
+        protected const double priceOfSoftDrink = 1.6;
+        protected const int quantityProduct = 1;
 
         public SoftDrink() : base(nameOfSoftDrink, priceOfSoftDrink, quantityProduct)
         {

@@ -8,9 +8,9 @@ namespace HotelMenagementSystem
 {
     public class Espresso : Product
     {
-        public const string nameOfEspresso = "Espresso";
-        public const double priceOfEspresso = 1.2;
-        public const int quantityProduct = 1;
+        protected const string nameOfEspresso = "Espresso";
+        protected const double priceOfEspresso = 1.2;
+        protected const int quantityProduct = 1;
 
         public Espresso() : base(nameOfEspresso, priceOfEspresso, quantityProduct)
         {
