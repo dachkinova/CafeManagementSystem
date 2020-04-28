@@ -230,8 +230,9 @@ namespace HotelMenagementSystem
             }
             builder.AppendLine();
 
-            TotalBill.Text = (string.Format("{0}", productsList.Sum(x => x.GetTotalPrice)));
-            // Result.Text = builder.ToString();
+            TotalBill.Text = (string.Format("{0}", 
+                productsList.Sum(x => x.GetTotalPrice)));
+            //Result.Text = builder.ToString();
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
