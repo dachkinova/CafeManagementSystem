@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -66,7 +67,17 @@ namespace HotelMenagementSystem
         {
             this.Hide();
             Form1 f = new Form1();
+            foreach (var pr in productsList1)
+            {
+                listView1.Items.Add(pr.ToString());
+            }
             f.ShowDialog();
+
+            foreach(var pr in productsList1)
+            {
+                listView1.Items.Add(pr.ToString());
+            }
+            
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -167,6 +178,10 @@ namespace HotelMenagementSystem
                 pm.ShowMessage();
             }
         }
+
+       
+
+
     }
 
     }

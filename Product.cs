@@ -47,7 +47,8 @@ namespace HotelMenagementSystem
         public override string ToString()
         {
             StringBuilder builder = new StringBuilder();
-            builder.AppendLine(string.Format("{0} {1,25}", this.GetType().Name, this.Price));
+            builder.AppendLine(string.Format("{0} {1,25:f2}", 
+                this.GetType().Name, this.Price));
 
 
             return builder.ToString();

@@ -33,6 +33,7 @@ namespace HotelMenagementSystem
             CheckOutForm checkOut = new CheckOutForm(TotalBill.Text, productsList);
             this.Hide();
             checkOut.ShowDialog();
+            
         }
 
 
@@ -79,7 +80,9 @@ namespace HotelMenagementSystem
             listView1.Items.Add(cap.ToString());
             LastAddedItem();
         }
+
         
+
         private void button4_Click(object sender, EventArgs e)
         {
             Espresso esp = new Espresso();
@@ -215,7 +218,7 @@ namespace HotelMenagementSystem
             LastAddedItem();
         }
 
-        private void TotalBill_TextChanged(object sender, EventArgs e)
+        public void TotalBill_TextChanged(object sender, EventArgs e)
         {
             ShowInformation(this, null);
         }
@@ -230,7 +233,7 @@ namespace HotelMenagementSystem
             }
             builder.AppendLine();
 
-            TotalBill.Text = (string.Format("{0}", 
+            TotalBill.Text = (string.Format("{0:f2}", 
                 productsList.Sum(x => x.GetTotalPrice)));
             //Result.Text = builder.ToString();
         }
