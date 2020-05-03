@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -20,13 +21,14 @@ namespace HotelMenagementSystem
 
         public List<Product> productsList1;
 
-        public string totalBill { get; private set; }
+        public string totalBill1 { get; private set; }
 
         public CheckOutForm(string totalBill, List<Product> productsList)
         {
             InitializeComponent();
             ListViewItem list = new ListViewItem(Name);
-            textBox3.Text = totalBill;
+            this.totalBill1 = totalBill;
+            textBox3.Text = totalBill1;
             this.productsList1 = productsList;
 
             listView1.View = View.Details;
@@ -65,19 +67,15 @@ namespace HotelMenagementSystem
         }
         private void BackButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Form1 f = new Form1();
+            
             foreach (var pr in productsList1)
             {
                 listView1.Items.Add(pr.ToString());
+                ShowInformation(this, null);
             }
             f.ShowDialog();
-
-            foreach(var pr in productsList1)
-            {
-                listView1.Items.Add(pr.ToString());
-            }
-            
+            this.Hide();
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -164,24 +162,80 @@ namespace HotelMenagementSystem
 
         private void button4_Click(object sender, EventArgs e)
         {
-            totalBill = textBox3.Text;
+            totalBill1 = textBox3.Text;
             if (checkedListBox1.GetItemCheckState(0) == CheckState.Checked)
             {
-                PaymentMethod pm = new ByCash(totalBill);
+                PaymentMethod pm = new ByCash(totalBill1);
                 pm.ShowMessage();
 
             }
             else if (checkedListBox1.GetItemCheckState(1) == CheckState.Checked)
             {
                 
-                PaymentMethod pm = new WithCard(totalBill);
+                PaymentMethod pm = new WithCard(totalBill1);
                 pm.ShowMessage();
             }
         }
+        public void ShowInformation(object sender, EventArgs e)
+        {
+            StringBuilder builder = new StringBuilder();
+            //builder.AppendLine("Bill:");
+            foreach (Product pr in productsList1)
+            {
+                builder.AppendLine(pr.ToString());
+            }
+            builder.AppendLine();
 
-       
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog.Document = printDocument;
+            printPreviewDialog.PrintPreviewControl.Zoom = 1.0;
+            printPreviewDialog.ShowDialog();
+        }
+
+        private void printPreviewDialog_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void printDocument_PrintPage(object sender,
+            System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString("RECEIPT", new Font("Times New Roman", 20,  FontStyle.Underline), 
+                new SolidBrush(Color.Blue), new Point(45, 45));
+            
+            e.Graphics.DrawString("Cafe management system", new Font("Times New Roman", 12, FontStyle.Italic),
+                new SolidBrush(Color.Black), new Point(45, 100));
+
+            e.Graphics.DrawString("Item", new Font("Times New Roman", 11, FontStyle.Italic),
+            new SolidBrush(Color.Black), new Point(45, 130));
+            e.Graphics.DrawString("Quantity", new Font("Times New Roman", 11, FontStyle.Italic),
+            new SolidBrush(Color.Black), new Point(200, 130));
+            e.Graphics.DrawString("Price", new Font("Times New Roman", 11, FontStyle.Italic),
+            new SolidBrush(Color.Black), new Point(300, 130));
+
+            int x = 150;
+
+            for (int i = 0; i < listView1.Items.Count; i++)
+            {
+                string name = listView1.Items[i].Text;
+                string qty = listView1.Items[i].SubItems[1].Text;
+                string price = listView1.Items[i].SubItems[2].Text;
 
 
+                e.Graphics.DrawString(name, new Font("Times New Roman", 12),
+                new SolidBrush(Color.Black), new Point(45, x));
+                e.Graphics.DrawString(qty, new Font("Times New Roman", 12),
+                new SolidBrush(Color.Black), new Point(200, x));
+                e.Graphics.DrawString(price, new Font("Times New Roman", 12),
+                new SolidBrush(Color.Black), new Point(300, x));
+
+                x += 17;
+            }
+            }
+        }
     }
 
-    }
+    

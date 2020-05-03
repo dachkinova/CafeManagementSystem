@@ -93,6 +93,16 @@ namespace HotelMenagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bill_receipt_paper_cost_print_invoice_512 {
+            get {
+                object obj = ResourceManager.GetObject("bill-receipt-paper-cost-print-invoice-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap login_background_images_clipart_1 {
             get {
                 object obj = ResourceManager.GetObject("login-background-images-clipart-1", resourceCulture);

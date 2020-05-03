@@ -40,18 +40,18 @@ namespace HotelMenagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if ((textBoxUsername.Text == "admin") && (textBoxPassword.Text == "1234"))
-            {
+            //if ((textBoxUsername.Text == "admin") && (textBoxPassword.Text == "1234"))
+            //{
                this.Hide();
                Form1 form = new Form1();
                form.ShowDialog();
-            }
-            else
-            {
-                DialogResult wrongLogin = 
-                    MessageBox.Show("Username/Password not correct", 
-                    "Cafe management system");
-            }
+            //}
+            //else
+            //{
+            //    DialogResult wrongLogin = 
+            //        MessageBox.Show("Username/Password not correct", 
+            //        "Cafe management system");
+            //}
             
         }
 

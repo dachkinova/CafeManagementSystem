@@ -147,6 +147,7 @@
     <Content Include="images\295128.png" />
     <Content Include="images\login-background-images-clipart-1.jpg" />
     <Content Include="images\unnamed.png" />
+    <None Include="Resources\bill-receipt-paper-cost-print-invoice-512.png" />
     <None Include="Resources\Sed-23-512.png" />
     <None Include="Resources\addiction_Coffee_1-512.png" />
     <None Include="Resources\pngtree-vector-house-key-icon-png-image_735884.jpg" />

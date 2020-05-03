@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.ColumnHeader Product;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CheckOutForm));
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -46,6 +47,8 @@
             this.BackButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.printDocument = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             Product = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -111,6 +114,7 @@
             this.button3.TabIndex = 10;
             this.button3.Text = "Print receipt";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // textBox3
             // 
@@ -242,6 +246,21 @@
             this.label6.Text = "Date";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
+            // printDocument
+            // 
+            this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
+            // 
+            // printPreviewDialog
+            // 
+            this.printPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog.Enabled = true;
+            this.printPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog.Icon")));
+            this.printPreviewDialog.Name = "printPreviewDialog";
+            this.printPreviewDialog.Visible = false;
+            this.printPreviewDialog.Load += new System.EventHandler(this.printPreviewDialog_Load);
+            // 
             // CheckOutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,5 +305,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Drawing.Printing.PrintDocument printDocument;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
     }
 }

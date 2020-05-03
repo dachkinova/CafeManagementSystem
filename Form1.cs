@@ -18,7 +18,14 @@ namespace HotelMenagementSystem
         public Form1()
         {
             productsList = new List<Product>();
-            
+            if (productsList != null)
+            {
+                foreach (var pr in productsList)
+                {
+                    listView1.Items.Add(pr.ToString());
+                    ShowInformation(this, null);
+                }
+            }
             InitializeComponent();
             
         }

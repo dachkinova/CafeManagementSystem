@@ -121,6 +121,12 @@
   <data name="login-background-images-clipart-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\login-background-images-clipart-1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="addiction_Coffee_1-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addiction_Coffee_1-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sed-23-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sed-23-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="518-5186830_exhibitor-login-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\518-5186830_exhibitor-login-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -130,13 +136,10 @@
   <data name="pngtree-vector-house-key-icon-png-image_735884" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngtree-vector-house-key-icon-png-image_735884.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="addiction_Coffee_1-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\addiction_Coffee_1-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="295128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\295128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Sed-23-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sed-23-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bill-receipt-paper-cost-print-invoice-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bill-receipt-paper-cost-print-invoice-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
