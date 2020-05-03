@@ -44,7 +44,7 @@ namespace HotelMenagementSystem
                 .Distinct()
                 .Select(g => new { Value = g.Key, 
                     Count = g.Count(), 
-                    TotalPrice = g.Sum(s => s.Price * s.quantity) })
+                    TotalPrice = string.Format("{0:f2}", g.Sum(s => s.Price * s.quantity)) })
                 .ToList();
 
 
@@ -192,7 +192,7 @@ namespace HotelMenagementSystem
         private void button3_Click(object sender, EventArgs e)
         {
             printDocument.DefaultPageSettings.PaperSize = 
-                new PaperSize("", 380, 500);
+                new PaperSize("", 390, 500);
             printPreviewDialog.Document = printDocument;
             printPreviewDialog.PrintPreviewControl.Zoom = 1.0;
             printPreviewDialog.ShowDialog();
@@ -211,6 +211,8 @@ namespace HotelMenagementSystem
             
             e.Graphics.DrawString("Cafe management system", new Font("Times New Roman", 12, FontStyle.Italic),
                 new SolidBrush(Color.Black), new Point(45, 100));
+
+            
 
             e.Graphics.DrawString("Item", new Font("Times New Roman", 11, FontStyle.Italic),
             new SolidBrush(Color.Black), new Point(45, 130));
@@ -234,9 +236,24 @@ namespace HotelMenagementSystem
                 new SolidBrush(Color.Black), new Point(200, x));
                 e.Graphics.DrawString(price, new Font("Times New Roman", 12),
                 new SolidBrush(Color.Black), new Point(300, x));
-
+                
                 x += 17;
+                
+
             }
+            
+                e.Graphics.DrawString("----------------------------",
+                    new Font("Times New Roman", 11, FontStyle.Italic),
+                new SolidBrush(Color.Black), new Point(200, x+20));
+                e.Graphics.DrawString("Total bill: " + totalBill1, new Font("Times New Roman", 14, FontStyle.Italic),
+                new SolidBrush(Color.Black), new Point(210, x+40));
+
+            var dateTime = DateTime.Now;
+            e.Graphics.DrawString(dateTime.ToString(), new Font("Times New Roman", 11, FontStyle.Italic),
+            new SolidBrush(Color.Black), new Point(45, x+100));
+
+
+
         }
 
         private void printPreview_PrintClick(object sender, System.EventArgs ee)
@@ -247,7 +264,7 @@ namespace HotelMenagementSystem
                 if (printPreviewDialog.ShowDialog() == DialogResult.OK)
                 {
                     printDocument.Print();
-                }
+                } 
             }
             catch (System.Exception ex)
             {
