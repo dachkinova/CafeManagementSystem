@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Configuration;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -190,6 +191,8 @@ namespace HotelMenagementSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
+            printDocument.DefaultPageSettings.PaperSize = 
+                new PaperSize("", 380, 500);
             printPreviewDialog.Document = printDocument;
             printPreviewDialog.PrintPreviewControl.Zoom = 1.0;
             printPreviewDialog.ShowDialog();
@@ -234,8 +237,25 @@ namespace HotelMenagementSystem
 
                 x += 17;
             }
+        }
+
+        private void printPreview_PrintClick(object sender, System.EventArgs ee)
+        {
+            try
+            {
+                this.printPreviewDialog.Document = printDocument;
+                if (printPreviewDialog.ShowDialog() == DialogResult.OK)
+                {
+                    printDocument.Print();
+                }
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message, ToString());
             }
         }
+
+    }
     }
 
     
