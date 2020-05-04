@@ -18,26 +18,38 @@ namespace HotelMenagementSystem
         public CheckOutForm()
         {
             InitializeComponent();
+            
+
         }
 
         public List<Product> productsList1;
+        
+        
+
+        public bool isPayed1 { get;  set; }
 
         public string totalBill1 { get; private set; }
+        
 
-        public CheckOutForm(string totalBill, List<Product> productsList)
+        public CheckOutForm(string totalBill, List<Product> productsList, bool isPayed)
         {
             InitializeComponent();
             ListViewItem list = new ListViewItem(Name);
             this.totalBill1 = totalBill;
-            textBox3.Text = totalBill1;
+            totalBillBox.Text = totalBill1;
             this.productsList1 = productsList;
+            this.isPayed1 = isPayed;
+
 
             listView1.View = View.Details;
             listView1.GridLines = true;
             listView1.FullRowSelect = true;
+            
 
             label6.Text = DateTime.Now.ToLongDateString();
             label5.Text = DateTime.Now.ToLongTimeString();
+
+            
 
 
             var list1 = productsList1.GroupBy(x => x.Name)
@@ -55,12 +67,16 @@ namespace HotelMenagementSystem
                 lvi.SubItems.Add(x.TotalPrice.ToString());
                 listView1.Items.Add(lvi);
             }
+
+            
         }
 
         public CheckOutForm(string text)
         {
             Text = text;
         }
+
+        
 
         private void label5_Click(object sender, EventArgs e)
         {
@@ -75,6 +91,7 @@ namespace HotelMenagementSystem
                 listView1.Items.Add(pr.ToString());
                 ShowInformation(this, null);
             }
+
             f.ShowDialog();
             this.Hide();
         }
@@ -109,15 +126,18 @@ namespace HotelMenagementSystem
                     
                     
                     double price = double.Parse(item.SubItems[2].Text);
-                    double newPrice = double.Parse(this.textBox3.Text)-price;
-                    textBox3.Text = newPrice.ToString();
+                    double newPrice = double.Parse(this.totalBillBox.Text)-price;
+                    totalBillBox.Text = newPrice.ToString();
+                    totalBill1 = newPrice.ToString();
+
+
                 }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             listView1.Clear();
-            textBox3.Clear();
+            totalBillBox.Clear();
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -163,7 +183,16 @@ namespace HotelMenagementSystem
 
         private void button4_Click(object sender, EventArgs e)
         {
-            totalBill1 = textBox3.Text;
+            totalBill1 = totalBillBox.Text;
+
+            int count = 0;
+            count++;
+
+
+            if (count == 1)
+            {
+                button4.Enabled = false;
+            }
             if (checkedListBox1.GetItemCheckState(0) == CheckState.Checked)
             {
                 PaymentMethod pm = new ByCash(totalBill1);
@@ -176,11 +205,13 @@ namespace HotelMenagementSystem
                 PaymentMethod pm = new WithCard(totalBill1);
                 pm.ShowMessage();
             }
+
+            
         }
         public void ShowInformation(object sender, EventArgs e)
         {
             StringBuilder builder = new StringBuilder();
-            //builder.AppendLine("Bill:");
+            
             foreach (Product pr in productsList1)
             {
                 builder.AppendLine(pr.ToString());
@@ -252,8 +283,7 @@ namespace HotelMenagementSystem
             e.Graphics.DrawString(dateTime.ToString(), new Font("Times New Roman", 11, FontStyle.Italic),
             new SolidBrush(Color.Black), new Point(45, x+100));
 
-
-
+            
         }
 
         private void printPreview_PrintClick(object sender, System.EventArgs ee)
@@ -272,6 +302,11 @@ namespace HotelMenagementSystem
             }
         }
 
+        protected void SaveDocument(object sender, EventArgs e)
+        {
+            // code for save the document
+            MessageBox.Show("OK");
+        }
     }
     }
 

@@ -34,7 +34,7 @@
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.totalBillBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -66,7 +66,7 @@
             this.panel2.Controls.Add(this.checkedListBox1);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.totalBillBox);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
@@ -91,11 +91,12 @@
             // 
             // button4
             // 
+            this.button4.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.Location = new System.Drawing.Point(73, 159);
+            this.button4.Location = new System.Drawing.Point(70, 164);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(167, 30);
             this.button4.TabIndex = 13;
@@ -116,14 +117,16 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // textBox3
+            // totalBillBox
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(171, 43);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(96, 22);
-            this.textBox3.TabIndex = 9;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.totalBillBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.totalBillBox.Location = new System.Drawing.Point(171, 43);
+            this.totalBillBox.Name = "totalBillBox";
+            this.totalBillBox.ReadOnly = true;
+            this.totalBillBox.Size = new System.Drawing.Size(96, 22);
+            this.totalBillBox.TabIndex = 9;
+            this.totalBillBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.totalBillBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label4
             // 
@@ -293,7 +296,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox totalBillBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;

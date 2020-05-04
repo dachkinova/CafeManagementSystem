@@ -37,7 +37,7 @@ namespace HotelMenagementSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CheckOutForm checkOut = new CheckOutForm(TotalBill.Text, productsList);
+            CheckOutForm checkOut = new CheckOutForm(TotalBill.Text, productsList, false);
             this.Hide();
             checkOut.ShowDialog();
             

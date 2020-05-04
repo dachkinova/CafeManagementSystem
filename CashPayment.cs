@@ -33,12 +33,18 @@ namespace HotelMenagementSystem
 
         private void button_Click(object sender, EventArgs e)
         {
-
-            DialogResult dialog = MessageBox.Show("The return amount is: "
-                + Change().ToString());
-            if (dialog == DialogResult.OK)
+            try
             {
-                this.Close();
+                DialogResult dialog = MessageBox.Show("The return amount is: "
+                    + Change().ToString());
+                if (dialog == DialogResult.OK)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid input! Enter the paying amount.");
             }
         }
     }

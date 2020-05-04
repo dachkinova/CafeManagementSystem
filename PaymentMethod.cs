@@ -8,7 +8,6 @@ namespace HotelMenagementSystem
 {
     public class PaymentMethod : CheckOutForm
     {
-        //public decimal totalBill;
         public virtual void ShowMessage()
         {
 
