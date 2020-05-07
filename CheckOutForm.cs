@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -45,6 +46,16 @@ namespace HotelMenagementSystem
 
         private void BackButton_Click(object sender, EventArgs e)
         {
+            DialogResult dialogResult = MessageBox.Show("If you go back to main form, ordered products " +
+                "will be restarted. Would you like to continue?", "Message", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Form1 f = new Form1();
+
+                f.ShowDialog();
+                this.Hide();
+            }
+            
             var binFormatter = new BinaryFormatter();
             using (var fileStream = new FileStream(@"D:\Ина\productsList.txt",
                 FileMode.Open, FileAccess.Read))
@@ -58,10 +69,7 @@ namespace HotelMenagementSystem
                 //    productsList1.ToString();
                 //}
             }
-            Form1 f = new Form1();
-
-            f.ShowDialog();
-            this.Hide();
+           
         }
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -240,7 +248,8 @@ namespace HotelMenagementSystem
 
         private void button5_Click(object sender, EventArgs e)
         {
-            
+
+
             string path = @"D:\SavedOrder-CafeManagemnetSystem\listOfOrderedProducts.txt";
 
             if (!File.Exists(path))
@@ -248,22 +257,44 @@ namespace HotelMenagementSystem
                 Directory.CreateDirectory(@"D:\SavedOrder-CafeManagemnetSystem");
                 using (StreamWriter sw = File.CreateText(path))       
                 {
+                    sw.WriteLine("Ordered products list: ");
+                    sw.WriteLine();
                     foreach (var product in productsList1)      
                     {
                         sw.WriteLine(product);   
-                    }       
+                    }
+                    sw.WriteLine();
+                    sw.WriteLine("Total bill: {0} ", totalBill1);
                 }
                 MessageBox.Show("Order successfully saved to file!");
 
             }
             else if (File.Exists(path))
             {
-                using (StreamWriter sw = new StreamWriter(path))
+                String path_current = path;
+                int count = 0;
+
+                while (File.Exists(path_current))
                 {
+                    count++;
+                    path_current = Path.GetDirectoryName(path)
+                                     + Path.DirectorySeparatorChar
+                                     + Path.GetFileNameWithoutExtension(path)
+                                     + "("
+                                     + count.ToString()
+                                     + ")"
+                                     + Path.GetExtension(path);
+                }
+                using (StreamWriter sw = new StreamWriter(path_current))
+                {
+                    sw.WriteLine("Ordered products list:");
+                    sw.WriteLine();
                     foreach (var product in productsList1)
                     {
                         sw.WriteLine(product);
                     }
+                    sw.WriteLine();
+                    sw.WriteLine("Total bill: {0}", totalBill1);
                 }
                 MessageBox.Show("Order successfully saved to file!");
             }

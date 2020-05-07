@@ -20,8 +20,6 @@ namespace HotelMenagementSystem
             InitializeComponent();
             textBox1.Text = totalBill;
             textBoxPassword.UseSystemPasswordChar = true;
-
-            
         }
 
         public string totalBill { get; private set; }
