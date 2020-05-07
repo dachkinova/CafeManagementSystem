@@ -101,7 +101,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(87, 26);
             this.textBox1.TabIndex = 7;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            //this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // ByCardPayment
             // 
@@ -121,7 +121,7 @@
             this.Name = "ByCardPayment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ByCardPayment";
-            this.Load += new System.EventHandler(this.ByCardPayment_Load);
+            //this.Load += new System.EventHandler(this.ByCardPayment_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

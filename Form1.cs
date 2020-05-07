@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HotelMenagementSystem
 {
+    [Serializable]
     public partial class Form1 : Form
     {
         public List<Product> productsList;
-
-
         public Form1()
         {
             productsList = new List<Product>();
@@ -29,43 +30,25 @@ namespace HotelMenagementSystem
             InitializeComponent();
             
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
+            var binFormatter = new BinaryFormatter();
+            using (var fileStream = new FileStream(@"D:\Ина\productsList.txt", 
+                FileMode.Create, FileAccess.Write))
+                binFormatter.Serialize(fileStream, productsList);
+            
             CheckOutForm checkOut = new CheckOutForm(TotalBill.Text, productsList, false);
             this.Hide();
             checkOut.ShowDialog();
-            
         }
-
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            DialogResult iExit;
-
-            iExit = MessageBox.Show("Are you sure you want to exit the system?", "Cafe management system", 
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (iExit == DialogResult.Yes) 
-            {
-                Application.Exit();
-            }
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DialogResult iExit;
-
-            iExit = MessageBox.Show("Are you sure you want to exit the system?", "Cafe management system",
+            DialogResult iExit = MessageBox.Show("Are you sure you want to exit " +
+                "the system?", "Cafe management system",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (iExit == DialogResult.Yes)
@@ -87,8 +70,6 @@ namespace HotelMenagementSystem
             listView1.Items.Add(cap.ToString());
             LastAddedItem();
         }
-
-        
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -225,29 +206,19 @@ namespace HotelMenagementSystem
             LastAddedItem();
         }
 
-        public void TotalBill_TextChanged(object sender, EventArgs e)
-        {
-            ShowInformation(this, null);
-        }
-
         public void ShowInformation(object sender, EventArgs e)
         {
             StringBuilder builder = new StringBuilder();
-            //builder.AppendLine("Bill:");
+            
             foreach (Product pr in productsList)
             {
                 builder.AppendLine(pr.ToString());
             }
+
             builder.AppendLine();
 
             TotalBill.Text = (string.Format("{0:f2}", 
-                productsList.Sum(x => x.GetTotalPrice)));
-            //Result.Text = builder.ToString();
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+                productsList.Sum(x => x.price)));
         }
 
         private void LastAddedItem ()

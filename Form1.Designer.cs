@@ -219,7 +219,6 @@ namespace HotelMenagementSystem
             this.label2.Size = new System.Drawing.Size(146, 24);
             this.label2.TabIndex = 0;
             this.label2.Text = "Hot beverages";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel4
             // 
@@ -397,7 +396,6 @@ namespace HotelMenagementSystem
             this.TotalBill.Name = "TotalBill";
             this.TotalBill.Size = new System.Drawing.Size(128, 32);
             this.TotalBill.TabIndex = 19;
-            this.TotalBill.TextChanged += new System.EventHandler(this.TotalBill_TextChanged);
             // 
             // listView1
             // 
@@ -409,7 +407,6 @@ namespace HotelMenagementSystem
             this.listView1.TabIndex = 12;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -508,7 +505,6 @@ namespace HotelMenagementSystem
         private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.Button BtnCapuchino;
         private System.Windows.Forms.TextBox TotalBill;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnMocaccino;
@@ -528,6 +524,7 @@ namespace HotelMenagementSystem
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelCurrent;
+        public System.Windows.Forms.ListView listView1;
     }
 }
 

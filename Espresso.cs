@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace HotelMenagementSystem
 {
+    [Serializable]
     public class Espresso : Product
     {
         protected const string nameOfEspresso = "Espresso";

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HotelMenagementSystem
 {
-
+    [Serializable]
     public class HerbTea : Product
     {
         protected const string nameOfHerbTea = "Herb tea";

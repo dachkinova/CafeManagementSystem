@@ -149,7 +149,7 @@
     <Content Include="images\unnamed.png" />
     <None Include="Resources\bill-receipt-paper-cost-print-invoice-512.png" />
     <None Include="Resources\Sed-23-512.png" />
-    <None Include="Resources\addiction_Coffee_1-512.png" />
+    <Content Include="Resources\addiction_Coffee_1-512.png" />
     <None Include="Resources\pngtree-vector-house-key-icon-png-image_735884.jpg" />
     <None Include="Resources\518-5186830_exhibitor-login-icon.png" />
     <None Include="Resources\login-background-images-clipart-1.jpg" />

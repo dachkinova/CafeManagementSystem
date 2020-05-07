@@ -7,29 +7,25 @@ using System.Drawing.Configuration;
 using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HotelMenagementSystem
 {
-    public partial class CheckOutForm :Form
+    [Serializable]
+    public partial class CheckOutForm : Form
     {
         public CheckOutForm()
         {
             InitializeComponent();
-            
-
         }
-
+        
         public List<Product> productsList1;
-        
-        
 
-        public bool isPayed1 { get;  set; }
-
-        public string totalBill1 { get; private set; }
-        
+        public string totalBill1 { get; set; }
 
         public CheckOutForm(string totalBill, List<Product> productsList, bool isPayed)
         {
@@ -38,131 +34,65 @@ namespace HotelMenagementSystem
             this.totalBill1 = totalBill;
             totalBillBox.Text = totalBill1;
             this.productsList1 = productsList;
-            this.isPayed1 = isPayed;
-
-
-            listView1.View = View.Details;
-            listView1.GridLines = true;
-            listView1.FullRowSelect = true;
             
 
             label6.Text = DateTime.Now.ToLongDateString();
             label5.Text = DateTime.Now.ToLongTimeString();
 
-            
 
-
-            var list1 = productsList1.GroupBy(x => x.Name)
-                .Distinct()
-                .Select(g => new { Value = g.Key, 
-                    Count = g.Count(), 
-                    TotalPrice = string.Format("{0:f2}", g.Sum(s => s.Price * s.quantity)) })
-                .ToList();
-
-
-            foreach (var x in list1)
-            {
-                ListViewItem lvi = new ListViewItem(x.Value.ToString());
-                lvi.SubItems.Add(x.Count.ToString());
-                lvi.SubItems.Add(x.TotalPrice.ToString());
-                listView1.Items.Add(lvi);
-            }
-
-            
+            GetDublicatedItems();
         }
 
-        public CheckOutForm(string text)
-        {
-            Text = text;
-        }
-
-        
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
         private void BackButton_Click(object sender, EventArgs e)
         {
-            Form1 f = new Form1();
-            
-            foreach (var pr in productsList1)
+            var binFormatter = new BinaryFormatter();
+            using (var fileStream = new FileStream(@"D:\Ина\productsList.txt",
+                FileMode.Open, FileAccess.Read))
             {
-                listView1.Items.Add(pr.ToString());
-                ShowInformation(this, null);
+                productsList1 = (List<Product>)binFormatter.Deserialize(fileStream);
+                //foreach (var pr in productsList1)
+                //{
+                //    ShowInformation(this, null);
+
+                //    //listView1.Items.Add(pr.ToString());
+                //    productsList1.ToString();
+                //}
             }
+            Form1 f = new Form1();
 
             f.ShowDialog();
             this.Hide();
         }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            listView2.View = View.Details;
+            listView2.GridLines = true;
+            listView2.FullRowSelect = true;
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            foreach (ListViewItem item in listView1.Items)
+            foreach (ListViewItem item in listView2.Items)
+            {
                 if (item.Selected)
                 {
-                    listView1.Items.Remove(item);
-                    
-                    
+                    listView2.Items.Remove(item);
+
                     double price = double.Parse(item.SubItems[2].Text);
-                    double newPrice = double.Parse(this.totalBillBox.Text)-price;
+                    double newPrice = double.Parse(this.totalBillBox.Text) - price;
                     totalBillBox.Text = newPrice.ToString();
                     totalBill1 = newPrice.ToString();
-
-
                 }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            listView1.Clear();
+            listView2.Clear();
             totalBillBox.Clear();
         }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label5_Click_1(object sender, EventArgs e)
+        public bool IsDublicated()
         {
 
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        public bool IsDublicated () 
-        {
-            
             var q = productsList1.GroupBy(x => x)
                .Select(g => new { Value = g.Key, Count = g.Count() })
                .OrderByDescending(x => x.Count);
@@ -180,7 +110,6 @@ namespace HotelMenagementSystem
             checkedListBox1.SetItemCheckState(iSelectedIndex, CheckState.Checked);
 
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             totalBill1 = totalBillBox.Text;
@@ -193,25 +122,22 @@ namespace HotelMenagementSystem
             {
                 button4.Enabled = false;
             }
+
             if (checkedListBox1.GetItemCheckState(0) == CheckState.Checked)
             {
                 PaymentMethod pm = new ByCash(totalBill1);
                 pm.ShowMessage();
-
             }
             else if (checkedListBox1.GetItemCheckState(1) == CheckState.Checked)
             {
-                
                 PaymentMethod pm = new WithCard(totalBill1);
                 pm.ShowMessage();
             }
-
-            
         }
         public void ShowInformation(object sender, EventArgs e)
         {
             StringBuilder builder = new StringBuilder();
-            
+
             foreach (Product pr in productsList1)
             {
                 builder.AppendLine(pr.ToString());
@@ -222,28 +148,21 @@ namespace HotelMenagementSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-            printDocument.DefaultPageSettings.PaperSize = 
+            printDocument.DefaultPageSettings.PaperSize =
                 new PaperSize("", 390, 500);
             printPreviewDialog.Document = printDocument;
             printPreviewDialog.PrintPreviewControl.Zoom = 1.0;
             printPreviewDialog.ShowDialog();
         }
-
-        private void printPreviewDialog_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void printDocument_PrintPage(object sender,
             System.Drawing.Printing.PrintPageEventArgs e)
         {
-            e.Graphics.DrawString("RECEIPT", new Font("Times New Roman", 20,  FontStyle.Underline), 
+            e.Graphics.DrawString("RECEIPT", new Font("Times New Roman", 20, FontStyle.Underline),
                 new SolidBrush(Color.Blue), new Point(45, 45));
-            
+
             e.Graphics.DrawString("Cafe management system", new Font("Times New Roman", 12, FontStyle.Italic),
                 new SolidBrush(Color.Black), new Point(45, 100));
 
-            
 
             e.Graphics.DrawString("Item", new Font("Times New Roman", 11, FontStyle.Italic),
             new SolidBrush(Color.Black), new Point(45, 130));
@@ -254,11 +173,11 @@ namespace HotelMenagementSystem
 
             int x = 150;
 
-            for (int i = 0; i < listView1.Items.Count; i++)
+            for (int i = 0; i < listView2.Items.Count; i++)
             {
-                string name = listView1.Items[i].Text;
-                string qty = listView1.Items[i].SubItems[1].Text;
-                string price = listView1.Items[i].SubItems[2].Text;
+                string name = listView2.Items[i].Text;
+                string qty = listView2.Items[i].SubItems[1].Text;
+                string price = listView2.Items[i].SubItems[2].Text;
 
 
                 e.Graphics.DrawString(name, new Font("Times New Roman", 12),
@@ -267,23 +186,19 @@ namespace HotelMenagementSystem
                 new SolidBrush(Color.Black), new Point(200, x));
                 e.Graphics.DrawString(price, new Font("Times New Roman", 12),
                 new SolidBrush(Color.Black), new Point(300, x));
-                
-                x += 17;
-                
 
+                x += 17;
             }
-            
-                e.Graphics.DrawString("----------------------------",
-                    new Font("Times New Roman", 11, FontStyle.Italic),
-                new SolidBrush(Color.Black), new Point(200, x+20));
-                e.Graphics.DrawString("Total bill: " + totalBill1, new Font("Times New Roman", 14, FontStyle.Italic),
-                new SolidBrush(Color.Black), new Point(210, x+40));
+
+            e.Graphics.DrawString("----------------------------",
+                new Font("Times New Roman", 11, FontStyle.Italic),
+            new SolidBrush(Color.Black), new Point(200, x + 20));
+            e.Graphics.DrawString("Total bill: " + totalBill1, new Font("Times New Roman", 14, FontStyle.Italic),
+            new SolidBrush(Color.Black), new Point(210, x + 40));
 
             var dateTime = DateTime.Now;
             e.Graphics.DrawString(dateTime.ToString(), new Font("Times New Roman", 11, FontStyle.Italic),
-            new SolidBrush(Color.Black), new Point(45, x+100));
-
-            
+            new SolidBrush(Color.Black), new Point(45, x + 100));
         }
 
         private void printPreview_PrintClick(object sender, System.EventArgs ee)
@@ -294,7 +209,7 @@ namespace HotelMenagementSystem
                 if (printPreviewDialog.ShowDialog() == DialogResult.OK)
                 {
                     printDocument.Print();
-                } 
+                }
             }
             catch (System.Exception ex)
             {
@@ -302,12 +217,58 @@ namespace HotelMenagementSystem
             }
         }
 
-        protected void SaveDocument(object sender, EventArgs e)
+        private void GetDublicatedItems()
         {
-            // code for save the document
-            MessageBox.Show("OK");
+            var list1 = productsList1.GroupBy(x => x.Name)
+                .Distinct()
+                .Select(g => new
+                {
+                    Value = g.Key,
+                    Count = g.Count(),
+                    TotalPrice = string.Format("{0:f2}", g.Sum(s => s.Price * s.quantity))
+                })
+                .ToList();
+
+            foreach (var x in list1)
+            {
+                ListViewItem lvi = new ListViewItem(x.Value.ToString());
+                lvi.SubItems.Add(x.Count.ToString());
+                lvi.SubItems.Add(x.TotalPrice.ToString());
+                listView2.Items.Add(lvi);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            
+            string path = @"D:\SavedOrder-CafeManagemnetSystem\listOfOrderedProducts.txt";
+
+            if (!File.Exists(path))
+            {
+                Directory.CreateDirectory(@"D:\SavedOrder-CafeManagemnetSystem");
+                using (StreamWriter sw = File.CreateText(path))       
+                {
+                    foreach (var product in productsList1)      
+                    {
+                        sw.WriteLine(product);   
+                    }       
+                }
+                MessageBox.Show("Order successfully saved to file!");
+
+            }
+            else if (File.Exists(path))
+            {
+                using (StreamWriter sw = new StreamWriter(path))
+                {
+                    foreach (var product in productsList1)
+                    {
+                        sw.WriteLine(product);
+                    }
+                }
+                MessageBox.Show("Order successfully saved to file!");
+            }
         }
     }
-    }
+}
 
     

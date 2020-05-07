@@ -79,15 +79,5 @@ namespace HotelMenagementSystem
                 return false;
             }
         }
-
-        private void ByCardPayment_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

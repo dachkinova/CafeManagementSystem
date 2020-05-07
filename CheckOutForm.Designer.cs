@@ -41,7 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listView2 = new System.Windows.Forms.ListView();
             this.Quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BackButton = new System.Windows.Forms.Button();
@@ -49,6 +49,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
+            this.button5 = new System.Windows.Forms.Button();
             Product = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -63,6 +64,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(204)))), ((int)(((byte)(222)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.checkedListBox1);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
@@ -83,7 +85,7 @@
             this.checkedListBox1.Items.AddRange(new object[] {
             "By cash",
             "With card"});
-            this.checkedListBox1.Location = new System.Drawing.Point(185, 109);
+            this.checkedListBox1.Location = new System.Drawing.Point(191, 102);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(83, 34);
             this.checkedListBox1.TabIndex = 14;
@@ -96,9 +98,9 @@
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.Location = new System.Drawing.Point(70, 164);
+            this.button4.Location = new System.Drawing.Point(32, 161);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(167, 30);
+            this.button4.Size = new System.Drawing.Size(242, 26);
             this.button4.TabIndex = 13;
             this.button4.Text = "Pay";
             this.button4.UseVisualStyleBackColor = true;
@@ -109,9 +111,9 @@
             this.button3.BackColor = System.Drawing.Color.LightGray;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(83, 286);
+            this.button3.Location = new System.Drawing.Point(171, 286);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(139, 46);
+            this.button3.Size = new System.Drawing.Size(103, 46);
             this.button3.TabIndex = 10;
             this.button3.Text = "Print receipt";
             this.button3.UseVisualStyleBackColor = false;
@@ -120,19 +122,18 @@
             // totalBillBox
             // 
             this.totalBillBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.totalBillBox.Location = new System.Drawing.Point(171, 43);
+            this.totalBillBox.Location = new System.Drawing.Point(178, 37);
             this.totalBillBox.Name = "totalBillBox";
             this.totalBillBox.ReadOnly = true;
             this.totalBillBox.Size = new System.Drawing.Size(96, 22);
             this.totalBillBox.TabIndex = 9;
             this.totalBillBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.totalBillBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(28, 45);
+            this.label4.Location = new System.Drawing.Point(39, 39);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 20);
             this.label4.TabIndex = 8;
@@ -164,12 +165,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(29, 109);
+            this.label1.Location = new System.Drawing.Point(29, 102);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Payment Method:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
@@ -191,19 +191,20 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Check out";
             // 
-            // listView1
+            // listView2
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             Product,
             this.Quantity,
             this.Price});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(356, 21);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(489, 431);
-            this.listView1.TabIndex = 5;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView2.HideSelection = false;
+            this.listView2.Location = new System.Drawing.Point(356, 21);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(489, 431);
+            this.listView2.TabIndex = 5;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.Details;
+            this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // Quantity
             // 
@@ -235,7 +236,6 @@
             this.label5.Size = new System.Drawing.Size(39, 16);
             this.label5.TabIndex = 7;
             this.label5.Text = "Time";
-            this.label5.Click += new System.EventHandler(this.label5_Click_1);
             // 
             // label6
             // 
@@ -247,7 +247,6 @@
             this.label6.Size = new System.Drawing.Size(37, 16);
             this.label6.TabIndex = 8;
             this.label6.Text = "Date";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // printDocument
             // 
@@ -262,7 +261,19 @@
             this.printPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog.Icon")));
             this.printPreviewDialog.Name = "printPreviewDialog";
             this.printPreviewDialog.Visible = false;
-            this.printPreviewDialog.Load += new System.EventHandler(this.printPreviewDialog_Load);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.LightGray;
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button5.Location = new System.Drawing.Point(32, 286);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(104, 46);
+            this.button5.TabIndex = 15;
+            this.button5.Text = "Save to file";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // CheckOutForm
             // 
@@ -274,7 +285,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.BackButton);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listView2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -294,7 +305,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox totalBillBox;
         private System.Windows.Forms.Label label4;
@@ -310,5 +321,6 @@
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Drawing.Printing.PrintDocument printDocument;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
+        private System.Windows.Forms.Button button5;
     }
 }
