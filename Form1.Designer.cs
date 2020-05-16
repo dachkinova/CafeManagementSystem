@@ -61,10 +61,14 @@ namespace HotelMenagementSystem
             this.label4 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelCurrent = new System.Windows.Forms.ToolStripStatusLabel();
+            this.labelUser = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -83,6 +87,7 @@ namespace HotelMenagementSystem
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(204)))), ((int)(((byte)(222)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(100, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(739, 78);
@@ -450,14 +455,45 @@ namespace HotelMenagementSystem
             this.toolStripStatusLabelCurrent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(146)))), ((int)(((byte)(176)))));
             this.toolStripStatusLabelCurrent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.toolStripStatusLabelCurrent.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripStatusLabelCurrent.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabelCurrent.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabelCurrent.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripStatusLabelCurrent.LinkColor = System.Drawing.Color.White;
             this.toolStripStatusLabelCurrent.Margin = new System.Windows.Forms.Padding(0);
             this.toolStripStatusLabelCurrent.Name = "toolStripStatusLabelCurrent";
             this.toolStripStatusLabelCurrent.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripStatusLabelCurrent.Size = new System.Drawing.Size(95, 18);
+            this.toolStripStatusLabelCurrent.Size = new System.Drawing.Size(99, 18);
             this.toolStripStatusLabelCurrent.Text = "Last added item:";
+            // 
+            // labelUser
+            // 
+            this.labelUser.AutoSize = true;
+            this.labelUser.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUser.Location = new System.Drawing.Point(7, 29);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(45, 19);
+            this.labelUser.TabIndex = 1;
+            this.labelUser.Text = "label";
+            this.labelUser.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.labelUser);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Location = new System.Drawing.Point(9, 9);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(120, 58);
+            this.panel3.TabIndex = 2;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(7, 5);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 18);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "User:";
             // 
             // Form1
             // 
@@ -487,6 +523,8 @@ namespace HotelMenagementSystem
             this.panel4.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -525,6 +563,9 @@ namespace HotelMenagementSystem
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelCurrent;
         public System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Label labelUser;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label6;
     }
 }
 

@@ -50,7 +50,7 @@ namespace HotelMenagementSystem
                 "will be restarted. Would you like to continue?", "Message", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                Form1 f = new Form1();
+                Form1 f = new Form1(null);
 
                 f.ShowDialog();
                 this.Hide();
@@ -122,14 +122,14 @@ namespace HotelMenagementSystem
         {
             totalBill1 = totalBillBox.Text;
 
-            int count = 0;
-            count++;
+            //int count = 0;
+            //count++;
 
 
-            if (count == 1)
-            {
-                button4.Enabled = false;
-            }
+            //if (count == 1)
+            //{
+            //    button4.Enabled = false;
+            //}
 
             if (checkedListBox1.GetItemCheckState(0) == CheckState.Checked)
             {
@@ -140,6 +140,10 @@ namespace HotelMenagementSystem
             {
                 PaymentMethod pm = new WithCard(totalBill1);
                 pm.ShowMessage();
+            }
+            else
+            {
+                MessageBox.Show("Please pick a payment method and then click OK to pay.");
             }
         }
         public void ShowInformation(object sender, EventArgs e)

@@ -15,9 +15,11 @@ namespace HotelMenagementSystem
     [Serializable]
     public partial class Form1 : Form
     {
+        public string userName1 { get; internal set; }
         public List<Product> productsList;
-        public Form1()
+        public Form1(string userName)
         {
+            this.userName1 = userName;
             productsList = new List<Product>();
             if (productsList != null)
             {
@@ -43,6 +45,10 @@ namespace HotelMenagementSystem
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            //using (LoginForm login = new LoginForm())
+            //{
+                labelUser.Text = userName1;
+            //}
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -228,6 +234,11 @@ namespace HotelMenagementSystem
             toolStripStatusLabelCurrent.Text = 
                 "Last added item:              " 
                 + current;
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

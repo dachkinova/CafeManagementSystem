@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace HotelMenagementSystem
 {
@@ -10,7 +11,7 @@ namespace HotelMenagementSystem
     {
         public virtual void ShowMessage()
         {
-
+            MessageBox.Show("Please pick a payment method and then click OK to pay.");
         }
     }
 

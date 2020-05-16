@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 
 namespace HotelMenagementSystem
 {
     public partial class LoginForm : Form
     {
+
         public LoginForm()
         {
             InitializeComponent();
@@ -40,19 +42,32 @@ namespace HotelMenagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //if ((textBoxUsername.Text == "admin") && (textBoxPassword.Text == "1234"))
-            //{
-               this.Hide();
-               Form1 form = new Form1();
-               form.ShowDialog();
-            //}
-            //else
-            //{
-            //    DialogResult wrongLogin = 
-            //        MessageBox.Show("Username/Password not correct", 
-            //        "Cafe management system");
-            //}
-            
+
+            SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Asus\OneDrive\Documents\Log-in-form.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlDataAdapter sda = new SqlDataAdapter("Select Count (*) From dbo.[Table] where Username='" +
+                textBoxUsername.Text + "' and Password ='" +
+                textBoxPassword.Text + "'", connection);
+
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            if (dt.Rows[0][0].ToString() == "1")
+            {
+                //if ((textBoxUsername.Text == "admin") && (textBoxPassword.Text == "1234"))
+                //{
+                string userName = textBoxUsername.Text;
+                this.Hide();
+                Form1 form = new Form1(userName);
+                form.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Username/Password not correct",
+                "Cafe management system");
+                textBoxUsername.Clear();
+                textBoxPassword.Clear();
+
+            }
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
