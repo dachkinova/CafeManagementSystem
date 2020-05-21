@@ -11,7 +11,8 @@ namespace HotelMenagementSystem
     {
         public virtual void ShowMessage()
         {
-            MessageBox.Show("Please pick a payment method and then click OK to pay.");
+            MessageBox.Show("Please pick a payment method " +
+                "and then click OK to pay.");
         }
     }
 
