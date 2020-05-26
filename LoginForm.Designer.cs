@@ -67,7 +67,7 @@
             this.buttonLogin.TabIndex = 4;
             this.buttonLogin.Text = "Log in";
             this.buttonLogin.UseVisualStyleBackColor = true;
-            this.buttonLogin.Click += new System.EventHandler(this.button1_Click);
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // textBoxPassword
             // 
@@ -77,7 +77,6 @@
             this.textBoxPassword.Size = new System.Drawing.Size(223, 29);
             this.textBoxPassword.TabIndex = 3;
             this.textBoxPassword.UseSystemPasswordChar = true;
-            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label3
             // 
@@ -88,7 +87,6 @@
             this.label3.Size = new System.Drawing.Size(97, 24);
             this.label3.TabIndex = 2;
             this.label3.Text = "Password:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // textBoxUsername
             // 
@@ -97,7 +95,6 @@
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(223, 29);
             this.textBoxUsername.TabIndex = 1;
-            this.textBoxUsername.TextChanged += new System.EventHandler(this.textBoxUsername_TextChanged);
             // 
             // label2
             // 
@@ -108,7 +105,6 @@
             this.label2.Size = new System.Drawing.Size(102, 24);
             this.label2.TabIndex = 0;
             this.label2.Text = "Username:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -121,7 +117,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Sign in";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
@@ -142,7 +137,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // LoginForm
             // 
@@ -157,7 +151,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "LoginForm";
             this.Text = "LoginForm";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);

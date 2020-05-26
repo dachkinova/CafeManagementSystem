@@ -32,6 +32,9 @@ namespace HotelMenagementSystem
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.labelUser = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnFruitTea = new System.Windows.Forms.Button();
             this.btnGreenTea = new System.Windows.Forms.Button();
@@ -52,8 +55,8 @@ namespace HotelMenagementSystem
             this.btnSoftDrink = new System.Windows.Forms.Button();
             this.btnWater = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonCheckOut = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
             this.TotalBill = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -61,14 +64,13 @@ namespace HotelMenagementSystem
             this.label4 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelCurrent = new System.Windows.Forms.ToolStripStatusLabel();
-            this.labelUser = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -90,8 +92,39 @@ namespace HotelMenagementSystem
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(100, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(739, 78);
+            this.panel1.Size = new System.Drawing.Size(705, 78);
             this.panel1.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.labelUser);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Location = new System.Drawing.Point(9, 9);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(120, 58);
+            this.panel3.TabIndex = 2;
+            // 
+            // labelUser
+            // 
+            this.labelUser.AutoSize = true;
+            this.labelUser.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUser.Location = new System.Drawing.Point(7, 29);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(45, 19);
+            this.labelUser.TabIndex = 1;
+            this.labelUser.Text = "label";
+            this.labelUser.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(7, 5);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 18);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "User:";
             // 
             // panel2
             // 
@@ -357,29 +390,29 @@ namespace HotelMenagementSystem
             this.label5.TabIndex = 1;
             this.label5.Text = "Cold drinks";
             // 
-            // button2
+            // buttonCheckOut
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(731, 433);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(154, 34);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Check out";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonCheckOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCheckOut.Location = new System.Drawing.Point(731, 433);
+            this.buttonCheckOut.Name = "buttonCheckOut";
+            this.buttonCheckOut.Size = new System.Drawing.Size(154, 34);
+            this.buttonCheckOut.TabIndex = 7;
+            this.buttonCheckOut.Text = "Check out";
+            this.buttonCheckOut.UseVisualStyleBackColor = true;
+            this.buttonCheckOut.Click += new System.EventHandler(this.buttonCheckOut_Click);
             // 
-            // button3
+            // buttonExit
             // 
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Location = new System.Drawing.Point(12, 15);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(82, 75);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Exit";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonExit.Location = new System.Drawing.Point(12, 15);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(82, 75);
+            this.buttonExit.TabIndex = 9;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // resetButton
             // 
@@ -464,36 +497,15 @@ namespace HotelMenagementSystem
             this.toolStripStatusLabelCurrent.Size = new System.Drawing.Size(99, 18);
             this.toolStripStatusLabelCurrent.Text = "Last added item:";
             // 
-            // labelUser
+            // pictureBox2
             // 
-            this.labelUser.AutoSize = true;
-            this.labelUser.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUser.Location = new System.Drawing.Point(7, 29);
-            this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(45, 19);
-            this.labelUser.TabIndex = 1;
-            this.labelUser.Text = "label";
-            this.labelUser.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.labelUser);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(9, 9);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(120, 58);
-            this.panel3.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(7, 5);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 18);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "User:";
+            this.pictureBox2.Image = global::CafeManagementSystem.Properties.Resources.giphy;
+            this.pictureBox2.Location = new System.Drawing.Point(816, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(93, 90);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
             // 
             // Form1
             // 
@@ -501,14 +513,15 @@ namespace HotelMenagementSystem
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(146)))), ((int)(((byte)(176)))));
             this.ClientSize = new System.Drawing.Size(921, 490);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.TotalBill);
             this.Controls.Add(this.resetButton);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonExit);
+            this.Controls.Add(this.buttonCheckOut);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -517,14 +530,15 @@ namespace HotelMenagementSystem
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -538,8 +552,8 @@ namespace HotelMenagementSystem
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonCheckOut;
+        private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.Button BtnCapuchino;
         private System.Windows.Forms.TextBox TotalBill;
@@ -566,6 +580,7 @@ namespace HotelMenagementSystem
         private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

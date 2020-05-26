@@ -56,11 +56,11 @@ namespace HotelMenagementSystem
                 this.Hide();
             }
             
-            var binFormatter = new BinaryFormatter();
-            using (var fileStream = new FileStream(@"D:\Ина\productsList.txt",
-                FileMode.Open, FileAccess.Read))
-            {
-                productsList1 = (List<Product>)binFormatter.Deserialize(fileStream);
+            //var binFormatter = new BinaryFormatter();
+            //using (var fileStream = new FileStream(@"D:\productsList.txt",
+            //    FileMode.Open, FileAccess.Read))
+            //{
+                //productsList1 = (List<Product>)binFormatter.Deserialize(fileStream);
                 //foreach (var pr in productsList1)
                 //{
                 //    ShowInformation(this, null);
@@ -68,7 +68,7 @@ namespace HotelMenagementSystem
                 //    //listView1.Items.Add(pr.ToString());
                 //    productsList1.ToString();
                 //}
-            }
+            //}
            
         }
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -77,7 +77,7 @@ namespace HotelMenagementSystem
             listView2.GridLines = true;
             listView2.FullRowSelect = true;
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonRemoveProduct_Click(object sender, EventArgs e)
         {
             foreach (ListViewItem item in listView2.Items)
             {
@@ -93,7 +93,7 @@ namespace HotelMenagementSystem
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonReset_Click(object sender, EventArgs e)
         {
             listView2.Clear();
             totalBillBox.Clear();
@@ -118,7 +118,7 @@ namespace HotelMenagementSystem
             checkedListBox1.SetItemCheckState(iSelectedIndex, CheckState.Checked);
 
         }
-        private void button4_Click(object sender, EventArgs e)
+        private void buttonPay_Click(object sender, EventArgs e)
         {
             totalBill1 = totalBillBox.Text;
 
@@ -158,7 +158,7 @@ namespace HotelMenagementSystem
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonPrint_Click(object sender, EventArgs e)
         {
             printDocument.DefaultPageSettings.PaperSize =
                 new PaperSize("", 390, 500);
@@ -250,7 +250,7 @@ namespace HotelMenagementSystem
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void buttonSaveToFile_Click(object sender, EventArgs e)
         {
 
 

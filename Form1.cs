@@ -32,12 +32,12 @@ namespace HotelMenagementSystem
             InitializeComponent();
             
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonCheckOut_Click(object sender, EventArgs e)
         {
-            var binFormatter = new BinaryFormatter();
-            using (var fileStream = new FileStream(@"D:\Ина\productsList.txt", 
-                FileMode.Create, FileAccess.Write))
-                binFormatter.Serialize(fileStream, productsList);
+            //var binFormatter = new BinaryFormatter();
+            //using (var fileStream = new FileStream(@"D:\productsList.txt", 
+            //    FileMode.Create, FileAccess.Write))
+            //    binFormatter.Serialize(fileStream, productsList);
             
             CheckOutForm checkOut = new CheckOutForm(TotalBill.Text, productsList, false);
             this.Hide();
@@ -51,7 +51,7 @@ namespace HotelMenagementSystem
             //}
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonExit_Click(object sender, EventArgs e)
         {
             DialogResult iExit = MessageBox.Show("Are you sure you want to exit " +
                 "the system?", "Cafe management system",

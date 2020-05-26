@@ -151,8 +151,11 @@
     <Content Include="images\295128.png" />
     <Content Include="images\login-background-images-clipart-1.jpg" />
     <Content Include="images\unnamed.png" />
+    <None Include="Resources\giphy.gif" />
+    <None Include="Resources\source.gif" />
     <None Include="Resources\bill-receipt-paper-cost-print-invoice-512.png" />
     <None Include="Resources\Sed-23-512.png" />
+    <None Include="Resources\695ecd8c9db479864d482176d3e4a838_library-of-animated-coffee-cup-clip-art-library-download-png-files-_231-307.gif" />
     <Content Include="Resources\addiction_Coffee_1-512.png" />
     <None Include="Resources\pngtree-vector-house-key-icon-png-image_735884.jpg" />
     <None Include="Resources\518-5186830_exhibitor-login-icon.png" />
