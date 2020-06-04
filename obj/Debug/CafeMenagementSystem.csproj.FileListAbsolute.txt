@@ -76,7 +76,6 @@ D:\Ина\HotelMenagement\HotelMenagementSystem\obj\Debug\CafeMenagementSystem.c
 D:\Ина\HotelMenagement\HotelMenagementSystem\obj\Debug\CafeMenagementSystem.csproj.CopyComplete
 D:\Ина\HotelMenagement\HotelMenagementSystem\obj\Debug\HotelMenagementSystem.exe
 D:\Ина\HotelMenagement\HotelMenagementSystem\obj\Debug\HotelMenagementSystem.pdb
-D:\Ина\PROJECT\CafeMenagementSystem\obj\Debug\CafeMenagementSystem.csprojAssemblyReference.cache
 D:\Ина\PROJECT\CafeMenagementSystem\obj\Debug\HotelMenagementSystem.ByCardPayment.resources
 D:\Ина\PROJECT\CafeMenagementSystem\obj\Debug\HotelMenagementSystem.CashPayment.resources
 D:\Ина\PROJECT\CafeMenagementSystem\obj\Debug\HotelMenagementSystem.CheckOutForm.resources
@@ -91,3 +90,4 @@ D:\Ина\PROJECT\CafeMenagementSystem\bin\Debug\CafeManagementSystem.exe
 D:\Ина\PROJECT\CafeMenagementSystem\bin\Debug\CafeManagementSystem.pdb
 D:\Ина\PROJECT\CafeMenagementSystem\obj\Debug\CafeManagementSystem.exe
 D:\Ина\PROJECT\CafeMenagementSystem\obj\Debug\CafeManagementSystem.pdb
+D:\Ина\PROJECT\CafeMenagementSystem\obj\Debug\CafeMenagementSystem.csprojAssemblyReference.cache

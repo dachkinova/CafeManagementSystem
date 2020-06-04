@@ -32,13 +32,18 @@ namespace HotelMenagementSystem
             InitializeComponent();
             
         }
+
+        public Form1()
+        {
+        }
+
         private void buttonCheckOut_Click(object sender, EventArgs e)
         {
-            //var binFormatter = new BinaryFormatter();
-            //using (var fileStream = new FileStream(@"D:\productsList.txt", 
-            //    FileMode.Create, FileAccess.Write))
-            //    binFormatter.Serialize(fileStream, productsList);
-            
+            var binFormatter = new BinaryFormatter();
+            using (var fileStream = new FileStream(@"D:\Ина\productsList.txt", 
+                FileMode.Create, FileAccess.Write))
+                binFormatter.Serialize(fileStream, productsList);
+             
             CheckOutForm checkOut = new CheckOutForm(TotalBill.Text, productsList, false);
             this.Hide();
             checkOut.ShowDialog();

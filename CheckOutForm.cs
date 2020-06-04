@@ -51,25 +51,23 @@ namespace HotelMenagementSystem
             if (dialogResult == DialogResult.Yes)
             {
                 Form1 f = new Form1(null);
-
+                
+                    
+                var binFormatter = new BinaryFormatter();
+                using (var fileStream = new FileStream(@"D:\Ина\productsList.txt",
+                   FileMode.Open, FileAccess.Read))
+                {
+                    productsList1 = (List<Product>)binFormatter.Deserialize(fileStream);
+                    foreach (var pr in productsList1)
+                    {
+                        //ShowInformation(this, null);
+                        f.listView1.Items.Add(pr.ToString());
+                        //productsList1.ToString();
+                    }
+                }
                 f.ShowDialog();
-                this.Hide();
+                this.Hide(); 
             }
-            
-            //var binFormatter = new BinaryFormatter();
-            //using (var fileStream = new FileStream(@"D:\productsList.txt",
-            //    FileMode.Open, FileAccess.Read))
-            //{
-                //productsList1 = (List<Product>)binFormatter.Deserialize(fileStream);
-                //foreach (var pr in productsList1)
-                //{
-                //    ShowInformation(this, null);
-
-                //    //listView1.Items.Add(pr.ToString());
-                //    productsList1.ToString();
-                //}
-            //}
-           
         }
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -223,9 +221,9 @@ namespace HotelMenagementSystem
                     printDocument.Print();
                 }
             }
-            catch (System.Exception ex)
+            catch (System.Exception e)
             {
-                MessageBox.Show(ex.Message, ToString());
+                MessageBox.Show(e.Message, ToString());
             }
         }
 
