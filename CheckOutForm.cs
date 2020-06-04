@@ -46,8 +46,7 @@ namespace HotelMenagementSystem
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("If you go back to main form, ordered products " +
-                "will be restarted. Would you like to continue?", "Message", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Would you like to continue?", "Message", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 Form1 f = new Form1(null);
@@ -65,8 +64,9 @@ namespace HotelMenagementSystem
                         //productsList1.ToString();
                     }
                 }
+                this.Hide();
                 f.ShowDialog();
-                this.Hide(); 
+                this.Close();
             }
         }
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -98,7 +98,6 @@ namespace HotelMenagementSystem
         }
         public bool IsDublicated()
         {
-
             var q = productsList1.GroupBy(x => x)
                .Select(g => new { Value = g.Key, Count = g.Count() })
                .OrderByDescending(x => x.Count);
