@@ -23,7 +23,7 @@ namespace HotelMenagementSystem
         private void buttonLogin_Click(object sender, EventArgs e)
         {
 
-            SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Asus\OneDrive\Documents\Log-in-form.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=logInConnectionString; Integrated Security=True;Connect Timeout=30");
             SqlDataAdapter sda = new SqlDataAdapter("Select Count (*) From dbo.[Table] where Username='" +
                 textBoxUsername.Text + "' and Password ='" +
                 textBoxPassword.Text + "'", connection);
