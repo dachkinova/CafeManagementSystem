@@ -130,7 +130,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox2.Image = global::CafeManagementSystem.Properties.Resources.addiction_Coffee_1_512;
+            //this.pictureBox2.Image = global::CafeManagementSystem.Properties.Resources.addiction_Coffee_1_512;
             this.pictureBox2.Location = new System.Drawing.Point(152, 24);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(132, 119);

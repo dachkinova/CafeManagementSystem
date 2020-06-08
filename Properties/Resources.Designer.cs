@@ -22,7 +22,7 @@ namespace CafeManagementSystem.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace CafeManagementSystem.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CafeManagementSystem.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace CafeManagementSystem.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace CafeManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _295128 {
+        public static System.Drawing.Bitmap _295128 {
             get {
                 object obj = ResourceManager.GetObject("295128", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +73,7 @@ namespace CafeManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _518_5186830_exhibitor_login_icon {
+        public static System.Drawing.Bitmap _518_5186830_exhibitor_login_icon {
             get {
                 object obj = ResourceManager.GetObject("518-5186830_exhibitor-login-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +83,7 @@ namespace CafeManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _695ecd8c9db479864d482176d3e4a838_library_of_animated_coffee_cup_clip_art_library_download_png_files__231_307 {
+        public static System.Drawing.Bitmap _695ecd8c9db479864d482176d3e4a838_library_of_animated_coffee_cup_clip_art_library_download_png_files__231_307 {
             get {
                 object obj = ResourceManager.GetObject("695ecd8c9db479864d482176d3e4a838_library-of-animated-coffee-cup-clip-art-library-" +
                         "download-png-files-_231-307", resourceCulture);
@@ -94,7 +94,7 @@ namespace CafeManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap addiction_Coffee_1_512 {
+        public static System.Drawing.Bitmap addiction_Coffee_1_512 {
             get {
                 object obj = ResourceManager.GetObject("addiction_Coffee_1-512", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -104,7 +104,7 @@ namespace CafeManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bill_receipt_paper_cost_print_invoice_512 {
+        public static System.Drawing.Bitmap bill_receipt_paper_cost_print_invoice_512 {
             get {
                 object obj = ResourceManager.GetObject("bill-receipt-paper-cost-print-invoice-512", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -114,7 +114,17 @@ namespace CafeManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap giphy {
+        public static System.Drawing.Bitmap database_path {
+            get {
+                object obj = ResourceManager.GetObject("database-path", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap giphy {
             get {
                 object obj = ResourceManager.GetObject("giphy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -124,7 +134,7 @@ namespace CafeManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap login_background_images_clipart_1 {
+        public static System.Drawing.Bitmap login_background_images_clipart_1 {
             get {
                 object obj = ResourceManager.GetObject("login-background-images-clipart-1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -134,7 +144,7 @@ namespace CafeManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pngtree_vector_house_key_icon_png_image_735884 {
+        public static System.Drawing.Bitmap pngtree_vector_house_key_icon_png_image_735884 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-vector-house-key-icon-png-image_735884", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -144,7 +154,7 @@ namespace CafeManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Sed_23_512 {
+        public static System.Drawing.Bitmap Sed_23_512 {
             get {
                 object obj = ResourceManager.GetObject("Sed-23-512", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -154,7 +164,7 @@ namespace CafeManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap source {
+        public static System.Drawing.Bitmap source {
             get {
                 object obj = ResourceManager.GetObject("source", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -164,7 +174,7 @@ namespace CafeManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap unnamed {
+        public static System.Drawing.Bitmap unnamed {
             get {
                 object obj = ResourceManager.GetObject("unnamed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

@@ -59,9 +59,9 @@ namespace HotelMenagementSystem
                     productsList1 = (List<Product>)binFormatter.Deserialize(fileStream);
                     foreach (var pr in productsList1)
                     {
-                        //ShowInformation(this, null);
-                        f.listView1.Items.Add(pr.ToString());
-                        //productsList1.ToString();
+                            //ShowInformation(this, null);
+                            f.listView1.Items.Add(pr.ToString());
+                            //productsList1.ToString();
                     }
                 }
                 this.Hide();

@@ -43,7 +43,17 @@ namespace HotelMenagementSystem
             using (var fileStream = new FileStream(@"D:\Ина\productsList.txt", 
                 FileMode.Create, FileAccess.Write))
                 binFormatter.Serialize(fileStream, productsList);
-             
+
+            int count = 0;
+            count++;
+
+            if (count > 1)
+            {
+                using (var fileStream = new FileStream(@"D:\Ина\productsList.txt",
+                FileMode.Append, FileAccess.Write))
+                    binFormatter.Serialize(fileStream, productsList);
+            }
+
             CheckOutForm checkOut = new CheckOutForm(TotalBill.Text, productsList, false);
             this.Hide();
             checkOut.ShowDialog();
