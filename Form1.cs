@@ -40,19 +40,36 @@ namespace HotelMenagementSystem
         private void buttonCheckOut_Click(object sender, EventArgs e)
         {
             var binFormatter = new BinaryFormatter();
-            using (var fileStream = new FileStream(@"D:\Ина\productsList.txt", 
-                FileMode.Create, FileAccess.Write))
-                binFormatter.Serialize(fileStream, productsList);
+            FileStream f = File.Open(@"D:\productsList.txt", FileMode.Create, FileAccess.Write); 
+                
+                binFormatter.Serialize(f, productsList);
 
-            int count = 0;
-            count++;
 
-            if (count > 1)
+            //int count = 0;
+            //count++;
+
+            Product[] arr = new Product[productsList.Count];
+            productsList.CopyTo(arr, 0);
+
+            for (int i = 0; i < arr.Length; i++)
             {
-                using (var fileStream = new FileStream(@"D:\Ина\productsList.txt",
-                FileMode.Append, FileAccess.Write))
-                    binFormatter.Serialize(fileStream, productsList);
+                byte[] lineBytes = Encoding.UTF8.GetBytes(arr[i].ToString());
+                f.Write(lineBytes, 0, lineBytes.Length);
+                string newLine = "\n";
+                byte[] newLineBytes = Encoding.UTF8.GetBytes(newLine);
+                f.Write(newLineBytes, 0, newLine.Length);
             }
+            f.Close();
+
+            //int count = 0;
+            //count++;
+
+            //if (count > 1)
+            //{
+            //    using (var fileStream = new FileStream(@"D:\productsList.txt",
+            //    FileMode.Append, FileAccess.Write))
+            //        binFormatter.Serialize(fileStream, productsList);
+            //}
 
             CheckOutForm checkOut = new CheckOutForm(TotalBill.Text, productsList, false);
             this.Hide();

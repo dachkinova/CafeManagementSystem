@@ -31,7 +31,7 @@ namespace HotelMenagementSystem
         public CheckOutForm(string totalBill, List<Product> productsList, bool isPayed)
         {
             InitializeComponent();
-            ListViewItem list = new ListViewItem(Name);
+            
             this.totalBill1 = totalBill;
             totalBillBox.Text = totalBill1;
             this.productsList1 = productsList;
@@ -53,15 +53,29 @@ namespace HotelMenagementSystem
                 
                     
                 var binFormatter = new BinaryFormatter();
-                using (var fileStream = new FileStream(@"D:\Ина\productsList.txt",
+                using (var fileStream = new FileStream(@"D:\productsList.txt",
                    FileMode.Open, FileAccess.Read))
                 {
                     productsList1 = (List<Product>)binFormatter.Deserialize(fileStream);
                     foreach (var pr in productsList1)
                     {
-                            //ShowInformation(this, null);
                             f.listView1.Items.Add(pr.ToString());
-                            //productsList1.ToString();
+                    }
+                }
+
+                int count = 0;
+                count++;
+
+                if (count > 1)
+                {
+                   using (var fileStream = new FileStream(@"D:\productsList.txt",
+                   FileMode.Open, FileAccess.Read))
+                    {
+                        productsList1 = (List<Product>)binFormatter.Deserialize(fileStream);
+                        foreach (var pr in productsList1)
+                        {
+                            f.listView1.Items.Add(pr.ToString());
+                        }
                     }
                 }
                 this.Hide();

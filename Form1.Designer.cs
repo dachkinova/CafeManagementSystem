@@ -30,6 +30,7 @@ namespace HotelMenagementSystem
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -75,59 +76,40 @@ namespace HotelMenagementSystem
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(187, 16);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(319, 39);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Cafe management system";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(204)))), ((int)(((byte)(222)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Location = new System.Drawing.Point(100, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(705, 78);
-            this.panel1.TabIndex = 1;
             // 
             // panel3
             // 
+            resources.ApplyResources(this.panel3, "panel3");
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.labelUser);
             this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(9, 9);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(120, 58);
-            this.panel3.TabIndex = 2;
             // 
             // labelUser
             // 
-            this.labelUser.AutoSize = true;
-            this.labelUser.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUser.Location = new System.Drawing.Point(7, 29);
+            resources.ApplyResources(this.labelUser, "labelUser");
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(45, 19);
-            this.labelUser.TabIndex = 1;
-            this.labelUser.Text = "label";
             this.labelUser.Click += new System.EventHandler(this.label6_Click);
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(7, 5);
+            resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 18);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "User:";
             // 
             // panel2
             // 
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(204)))), ((int)(((byte)(222)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.btnFruitTea);
@@ -139,127 +121,80 @@ namespace HotelMenagementSystem
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.BtnCapuchino);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(12, 96);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(294, 371);
-            this.panel2.TabIndex = 2;
             // 
             // btnFruitTea
             // 
+            resources.ApplyResources(this.btnFruitTea, "btnFruitTea");
             this.btnFruitTea.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFruitTea.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnFruitTea.Location = new System.Drawing.Point(158, 291);
-            this.btnFruitTea.Margin = new System.Windows.Forms.Padding(2);
             this.btnFruitTea.Name = "btnFruitTea";
-            this.btnFruitTea.Size = new System.Drawing.Size(112, 56);
-            this.btnFruitTea.TabIndex = 41;
-            this.btnFruitTea.Text = "Fruit Tea";
             this.btnFruitTea.UseVisualStyleBackColor = true;
             this.btnFruitTea.Click += new System.EventHandler(this.btnFruitTea_Click);
             // 
             // btnGreenTea
             // 
+            resources.ApplyResources(this.btnGreenTea, "btnGreenTea");
             this.btnGreenTea.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGreenTea.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnGreenTea.Location = new System.Drawing.Point(28, 291);
-            this.btnGreenTea.Margin = new System.Windows.Forms.Padding(2);
             this.btnGreenTea.Name = "btnGreenTea";
-            this.btnGreenTea.Size = new System.Drawing.Size(112, 56);
-            this.btnGreenTea.TabIndex = 40;
-            this.btnGreenTea.Text = "Green Tea";
             this.btnGreenTea.UseVisualStyleBackColor = true;
             this.btnGreenTea.Click += new System.EventHandler(this.btnGreenTea_Click);
             // 
             // btnHerbTea
             // 
+            resources.ApplyResources(this.btnHerbTea, "btnHerbTea");
             this.btnHerbTea.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHerbTea.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnHerbTea.Location = new System.Drawing.Point(158, 217);
-            this.btnHerbTea.Margin = new System.Windows.Forms.Padding(2);
             this.btnHerbTea.Name = "btnHerbTea";
-            this.btnHerbTea.Size = new System.Drawing.Size(112, 56);
-            this.btnHerbTea.TabIndex = 39;
-            this.btnHerbTea.Text = "Herb Tea";
             this.btnHerbTea.UseVisualStyleBackColor = true;
             this.btnHerbTea.Click += new System.EventHandler(this.btnHerbTea_Click);
             // 
             // btnHotChocolate
             // 
+            resources.ApplyResources(this.btnHotChocolate, "btnHotChocolate");
             this.btnHotChocolate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHotChocolate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnHotChocolate.Location = new System.Drawing.Point(28, 217);
-            this.btnHotChocolate.Margin = new System.Windows.Forms.Padding(2);
             this.btnHotChocolate.Name = "btnHotChocolate";
-            this.btnHotChocolate.Size = new System.Drawing.Size(112, 56);
-            this.btnHotChocolate.TabIndex = 38;
-            this.btnHotChocolate.Text = "Hot Chocolate";
             this.btnHotChocolate.UseVisualStyleBackColor = true;
             this.btnHotChocolate.Click += new System.EventHandler(this.btnHotChocolate_Click);
             // 
             // btnMocaccino
             // 
+            resources.ApplyResources(this.btnMocaccino, "btnMocaccino");
             this.btnMocaccino.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMocaccino.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnMocaccino.Location = new System.Drawing.Point(28, 70);
-            this.btnMocaccino.Margin = new System.Windows.Forms.Padding(2);
             this.btnMocaccino.Name = "btnMocaccino";
-            this.btnMocaccino.Size = new System.Drawing.Size(112, 56);
-            this.btnMocaccino.TabIndex = 37;
-            this.btnMocaccino.Text = "Mocaccino";
             this.btnMocaccino.UseVisualStyleBackColor = true;
             this.btnMocaccino.Click += new System.EventHandler(this.btnMocaccino_Click);
             // 
             // button5
             // 
+            resources.ApplyResources(this.button5, "button5");
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(158, 70);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(112, 56);
-            this.button5.TabIndex = 36;
-            this.button5.Text = "Cafe Latte";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
+            resources.ApplyResources(this.button4, "button4");
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(158, 145);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(112, 56);
-            this.button4.TabIndex = 35;
-            this.button4.Text = "Espresso";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // BtnCapuchino
             // 
+            resources.ApplyResources(this.BtnCapuchino, "BtnCapuchino");
             this.BtnCapuchino.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnCapuchino.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnCapuchino.Location = new System.Drawing.Point(28, 145);
-            this.BtnCapuchino.Margin = new System.Windows.Forms.Padding(2);
             this.BtnCapuchino.Name = "BtnCapuchino";
-            this.BtnCapuchino.Size = new System.Drawing.Size(112, 56);
-            this.BtnCapuchino.TabIndex = 34;
-            this.BtnCapuchino.Text = "Cappuccino";
             this.BtnCapuchino.UseVisualStyleBackColor = true;
             this.BtnCapuchino.Click += new System.EventHandler(this.BtnCapuchino_Click);
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(71, 18);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 24);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Hot beverages";
             // 
             // panel4
             // 
+            resources.ApplyResources(this.panel4, "panel4");
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(204)))), ((int)(((byte)(222)))));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.btnFreshJuice);
@@ -271,248 +206,157 @@ namespace HotelMenagementSystem
             this.panel4.Controls.Add(this.btnSoftDrink);
             this.panel4.Controls.Add(this.btnWater);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(314, 96);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(294, 371);
-            this.panel4.TabIndex = 3;
             // 
             // btnFreshJuice
             // 
+            resources.ApplyResources(this.btnFreshJuice, "btnFreshJuice");
             this.btnFreshJuice.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFreshJuice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnFreshJuice.Location = new System.Drawing.Point(155, 291);
-            this.btnFreshJuice.Margin = new System.Windows.Forms.Padding(2);
             this.btnFreshJuice.Name = "btnFreshJuice";
-            this.btnFreshJuice.Size = new System.Drawing.Size(112, 56);
-            this.btnFreshJuice.TabIndex = 48;
-            this.btnFreshJuice.Text = "Fresh juice";
             this.btnFreshJuice.UseVisualStyleBackColor = true;
             this.btnFreshJuice.Click += new System.EventHandler(this.btnFreshJuice_Click);
             // 
             // btnMilkShake
             // 
+            resources.ApplyResources(this.btnMilkShake, "btnMilkShake");
             this.btnMilkShake.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMilkShake.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnMilkShake.Location = new System.Drawing.Point(23, 291);
-            this.btnMilkShake.Margin = new System.Windows.Forms.Padding(2);
             this.btnMilkShake.Name = "btnMilkShake";
-            this.btnMilkShake.Size = new System.Drawing.Size(112, 56);
-            this.btnMilkShake.TabIndex = 47;
-            this.btnMilkShake.Text = "Milk shake";
             this.btnMilkShake.UseVisualStyleBackColor = true;
             this.btnMilkShake.Click += new System.EventHandler(this.btnMilkShake_Click);
             // 
             // btnSmoothie
             // 
+            resources.ApplyResources(this.btnSmoothie, "btnSmoothie");
             this.btnSmoothie.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSmoothie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnSmoothie.Location = new System.Drawing.Point(155, 217);
-            this.btnSmoothie.Margin = new System.Windows.Forms.Padding(2);
             this.btnSmoothie.Name = "btnSmoothie";
-            this.btnSmoothie.Size = new System.Drawing.Size(112, 56);
-            this.btnSmoothie.TabIndex = 46;
-            this.btnSmoothie.Text = "Smoothie";
             this.btnSmoothie.UseVisualStyleBackColor = true;
             this.btnSmoothie.Click += new System.EventHandler(this.btnSmoothie_Click);
             // 
             // btnIcedCoffee
             // 
+            resources.ApplyResources(this.btnIcedCoffee, "btnIcedCoffee");
             this.btnIcedCoffee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIcedCoffee.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnIcedCoffee.Location = new System.Drawing.Point(23, 217);
-            this.btnIcedCoffee.Margin = new System.Windows.Forms.Padding(2);
             this.btnIcedCoffee.Name = "btnIcedCoffee";
-            this.btnIcedCoffee.Size = new System.Drawing.Size(112, 56);
-            this.btnIcedCoffee.TabIndex = 45;
-            this.btnIcedCoffee.Text = "Iced coffee";
             this.btnIcedCoffee.UseVisualStyleBackColor = true;
             this.btnIcedCoffee.Click += new System.EventHandler(this.btnIcedCoffee_Click);
             // 
             // btnIcedTea
             // 
+            resources.ApplyResources(this.btnIcedTea, "btnIcedTea");
             this.btnIcedTea.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIcedTea.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnIcedTea.Location = new System.Drawing.Point(155, 145);
-            this.btnIcedTea.Margin = new System.Windows.Forms.Padding(2);
             this.btnIcedTea.Name = "btnIcedTea";
-            this.btnIcedTea.Size = new System.Drawing.Size(112, 56);
-            this.btnIcedTea.TabIndex = 44;
-            this.btnIcedTea.Text = "Iced tea";
             this.btnIcedTea.UseVisualStyleBackColor = true;
             this.btnIcedTea.Click += new System.EventHandler(this.btnIcedTea_Click);
             // 
             // btnLemonade
             // 
+            resources.ApplyResources(this.btnLemonade, "btnLemonade");
             this.btnLemonade.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLemonade.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnLemonade.Location = new System.Drawing.Point(23, 145);
-            this.btnLemonade.Margin = new System.Windows.Forms.Padding(2);
             this.btnLemonade.Name = "btnLemonade";
-            this.btnLemonade.Size = new System.Drawing.Size(112, 56);
-            this.btnLemonade.TabIndex = 43;
-            this.btnLemonade.Text = "Lemonade";
             this.btnLemonade.UseVisualStyleBackColor = true;
             this.btnLemonade.Click += new System.EventHandler(this.btnLemonade_Click);
             // 
             // btnSoftDrink
             // 
+            resources.ApplyResources(this.btnSoftDrink, "btnSoftDrink");
             this.btnSoftDrink.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSoftDrink.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnSoftDrink.Location = new System.Drawing.Point(155, 72);
-            this.btnSoftDrink.Margin = new System.Windows.Forms.Padding(2);
             this.btnSoftDrink.Name = "btnSoftDrink";
-            this.btnSoftDrink.Size = new System.Drawing.Size(112, 56);
-            this.btnSoftDrink.TabIndex = 42;
-            this.btnSoftDrink.Text = "Soft drink";
             this.btnSoftDrink.UseVisualStyleBackColor = true;
             this.btnSoftDrink.Click += new System.EventHandler(this.btnSoftDrink_Click);
             // 
             // btnWater
             // 
+            resources.ApplyResources(this.btnWater, "btnWater");
             this.btnWater.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnWater.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnWater.Location = new System.Drawing.Point(23, 72);
-            this.btnWater.Margin = new System.Windows.Forms.Padding(2);
             this.btnWater.Name = "btnWater";
-            this.btnWater.Size = new System.Drawing.Size(112, 56);
-            this.btnWater.TabIndex = 42;
-            this.btnWater.Text = "Water";
             this.btnWater.UseVisualStyleBackColor = true;
             this.btnWater.Click += new System.EventHandler(this.btnWater_Click);
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(88, 18);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(115, 24);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Cold drinks";
             // 
             // buttonCheckOut
             // 
+            resources.ApplyResources(this.buttonCheckOut, "buttonCheckOut");
             this.buttonCheckOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCheckOut.Location = new System.Drawing.Point(731, 433);
             this.buttonCheckOut.Name = "buttonCheckOut";
-            this.buttonCheckOut.Size = new System.Drawing.Size(154, 34);
-            this.buttonCheckOut.TabIndex = 7;
-            this.buttonCheckOut.Text = "Check out";
             this.buttonCheckOut.UseVisualStyleBackColor = true;
             this.buttonCheckOut.Click += new System.EventHandler(this.buttonCheckOut_Click);
             // 
             // buttonExit
             // 
-            this.buttonExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            resources.ApplyResources(this.buttonExit, "buttonExit");
             this.buttonExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonExit.Location = new System.Drawing.Point(12, 15);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(82, 75);
-            this.buttonExit.TabIndex = 9;
-            this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // resetButton
             // 
+            resources.ApplyResources(this.resetButton, "resetButton");
             this.resetButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.resetButton.Location = new System.Drawing.Point(633, 433);
             this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(92, 34);
-            this.resetButton.TabIndex = 10;
-            this.resetButton.Text = "Reset all";
             this.resetButton.UseVisualStyleBackColor = true;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
             // TotalBill
             // 
-            this.TotalBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TotalBill.Location = new System.Drawing.Point(757, 385);
-            this.TotalBill.Margin = new System.Windows.Forms.Padding(2);
-            this.TotalBill.Multiline = true;
+            resources.ApplyResources(this.TotalBill, "TotalBill");
             this.TotalBill.Name = "TotalBill";
-            this.TotalBill.Size = new System.Drawing.Size(128, 32);
-            this.TotalBill.TabIndex = 19;
             // 
             // listView1
             // 
+            resources.ApplyResources(this.listView1, "listView1");
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(657, 123);
-            this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(218, 248);
-            this.listView1.TabIndex = 12;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(642, 389);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 18);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Total bill:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.label4, "label4");
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(682, 105);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(167, 16);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Selected products preview";
             // 
             // statusStrip1
             // 
-            this.statusStrip1.AutoSize = false;
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(146)))), ((int)(((byte)(176)))));
-            this.statusStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.statusStrip1.GripMargin = new System.Windows.Forms.Padding(0);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabelCurrent});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 472);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(921, 18);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.Stretch = false;
-            this.statusStrip1.TabIndex = 22;
-            this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabelCurrent
             // 
+            resources.ApplyResources(this.toolStripStatusLabelCurrent, "toolStripStatusLabelCurrent");
             this.toolStripStatusLabelCurrent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(146)))), ((int)(((byte)(176)))));
-            this.toolStripStatusLabelCurrent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.toolStripStatusLabelCurrent.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripStatusLabelCurrent.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripStatusLabelCurrent.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripStatusLabelCurrent.LinkColor = System.Drawing.Color.White;
             this.toolStripStatusLabelCurrent.Margin = new System.Windows.Forms.Padding(0);
             this.toolStripStatusLabelCurrent.Name = "toolStripStatusLabelCurrent";
-            this.toolStripStatusLabelCurrent.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripStatusLabelCurrent.Size = new System.Drawing.Size(99, 18);
-            this.toolStripStatusLabelCurrent.Text = "Last added item:";
             // 
             // pictureBox2
             // 
-            //this.pictureBox2.Image = global::CafeManagementSystem.Properties.Resources.giphy;
-            this.pictureBox2.Location = new System.Drawing.Point(816, 12);
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.Image = global::CafeManagementSystem.Properties.Resources.giphy;
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(93, 90);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(146)))), ((int)(((byte)(176)))));
-            this.ClientSize = new System.Drawing.Size(921, 490);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label4);
@@ -526,7 +370,6 @@ namespace HotelMenagementSystem
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
-            this.Text = "Cafe management system";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
