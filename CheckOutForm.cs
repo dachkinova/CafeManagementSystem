@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CafeManagementSystem;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,7 +24,7 @@ namespace HotelMenagementSystem
         {
             InitializeComponent();
         }
-        
+
         public List<Product> productsList1;
 
         public string totalBill1 { get; set; }
@@ -31,11 +32,11 @@ namespace HotelMenagementSystem
         public CheckOutForm(string totalBill, List<Product> productsList, bool isPayed)
         {
             InitializeComponent();
-            
+
             this.totalBill1 = totalBill;
             totalBillBox.Text = totalBill1;
             this.productsList1 = productsList;
-            
+
 
             label6.Text = DateTime.Now.ToLongDateString();
             label5.Text = DateTime.Now.ToLongTimeString();
@@ -50,8 +51,8 @@ namespace HotelMenagementSystem
             if (dialogResult == DialogResult.Yes)
             {
                 Form1 f = new Form1(null);
-                
-                    
+
+
                 var binFormatter = new BinaryFormatter();
                 using (var fileStream = new FileStream(@"D:\productsList.txt",
                    FileMode.Open, FileAccess.Read))
@@ -59,7 +60,7 @@ namespace HotelMenagementSystem
                     productsList1 = (List<Product>)binFormatter.Deserialize(fileStream);
                     foreach (var pr in productsList1)
                     {
-                            f.listView1.Items.Add(pr.ToString());
+                        f.listView1.Items.Add(pr.ToString());
                     }
                 }
 
@@ -68,8 +69,8 @@ namespace HotelMenagementSystem
 
                 if (count > 1)
                 {
-                   using (var fileStream = new FileStream(@"D:\productsList.txt",
-                   FileMode.Open, FileAccess.Read))
+                    using (var fileStream = new FileStream(@"D:\productsList.txt",
+                    FileMode.Open, FileAccess.Read))
                     {
                         productsList1 = (List<Product>)binFormatter.Deserialize(fileStream);
                         foreach (var pr in productsList1)
@@ -263,60 +264,13 @@ namespace HotelMenagementSystem
 
         private void buttonSaveToFile_Click(object sender, EventArgs e)
         {
-
-
             string path = @"D:\SavedOrder-CafeManagemnetSystem\listOfOrderedProducts.txt";
-
-
-            //FileSaver.CreateFile(path, productsList1);
-
-        //    if (!File.Exists(path))
-        //    {
-        //        Directory.CreateDirectory(@"D:\SavedOrder-CafeManagemnetSystem");
-        //        using (StreamWriter sw = File.CreateText(path))       
-        //        {
-        //            sw.WriteLine("Ordered products list: ");
-        //            sw.WriteLine();
-        //            foreach (var product in productsList1)      
-        //            {
-        //                sw.WriteLine(product);   
-        //            }
-        //            sw.WriteLine();
-        //            sw.WriteLine("Total bill: {0} ", totalBill1);
-        //        }
-        //        MessageBox.Show("Order successfully saved to file!");
-
-        //    }
-        //    else if (File.Exists(path))
-        //    {
-        //        String path_current = path;
-        //        int count = 0;
-
-        //        while (File.Exists(path_current))
-        //        {
-        //            count++;
-        //            path_current = Path.GetDirectoryName(path)
-        //                             + Path.DirectorySeparatorChar
-        //                             + Path.GetFileNameWithoutExtension(path)
-        //                             + "("
-        //                             + count.ToString()
-        //                             + ")"
-        //                             + Path.GetExtension(path);
-        //        }
-        //        using (StreamWriter sw = new StreamWriter(path_current))
-        //        {
-        //            sw.WriteLine("Ordered products list:");
-        //            sw.WriteLine();
-        //            foreach (var product in productsList1)
-        //            {
-        //                sw.WriteLine(product);
-        //            }
-        //            sw.WriteLine();
-        //            sw.WriteLine("Total bill: {0}", totalBill1);
-        //        }
-        //        MessageBox.Show("Order successfully saved to file!");
-        //    }
+            
+            FileSaver.CreateFile(path, productsList1, totalBill1);
         }
+      
+    
+        
     }
 }
 

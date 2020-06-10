@@ -12,6 +12,7 @@ using System.IO;
 using CafeManagementSystem.Properties;
 using MySql.Data;
 using System.Configuration;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace HotelMenagementSystem
 {
@@ -28,7 +29,7 @@ namespace HotelMenagementSystem
             string dbPath = Application.StartupPath + "\\Log-in-form.mdf";
 
             SqlConnection connection = new SqlConnection
-                   (@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + dbPath + 
+                   (@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + dbPath +
                    ";Integrated Security=True;Connect Timeout=30");
 
             SqlDataAdapter sda = new SqlDataAdapter
@@ -60,10 +61,27 @@ namespace HotelMenagementSystem
         {
             if (e.KeyCode == Keys.Enter)
             {
-               buttonLogin.PerformClick();
+                buttonLogin.PerformClick();
             }
         }
 
-       
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            var binFormatter = new BinaryFormatter();
+            FileStream f = File.Open(@"D:\messageNote.txt",
+                FileMode.Create, FileAccess.Write);
+
+            binFormatter.Serialize(f, textBoxNote.Text);
+        }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
     }
 }

@@ -13,7 +13,6 @@ namespace HotelMenagementSystem
         public WithCard(string totalBill)
         {
             this.totalBill = totalBill;
-            
         }
 
         public override void ShowMessage()

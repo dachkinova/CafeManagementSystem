@@ -115,7 +115,7 @@
     <Compile Include="PaymentMethod.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductsListService.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -206,9 +206,9 @@
     <Folder Include="App_data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Lib\Lib.csproj">
-      <Project>{2edcb7fb-1696-4d49-8d07-7081033dd462}</Project>
-      <Name>Lib</Name>
+    <ProjectReference Include="..\Library\Library.csproj">
+      <Project>{8892e96a-3e8d-4654-9fea-9f7076377a52}</Project>
+      <Name>Library</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

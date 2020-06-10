@@ -44,7 +44,6 @@ namespace HotelMenagementSystem
                 
                 binFormatter.Serialize(f, productsList);
 
-
             //int count = 0;
             //count++;
 
