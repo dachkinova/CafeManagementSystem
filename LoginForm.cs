@@ -55,6 +55,11 @@ namespace HotelMenagementSystem
                 textBoxPassword.Clear();
 
             }
+            var binFormatter = new BinaryFormatter();
+            FileStream f = File.Open(@"D:\messageNote.txt",
+                FileMode.Create, FileAccess.Write);
+
+            binFormatter.Serialize(f, textBoxNote.Text);
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -73,15 +78,17 @@ namespace HotelMenagementSystem
         private void LoginForm_Load(object sender, EventArgs e)
         {
             var binFormatter = new BinaryFormatter();
-            FileStream f = File.Open(@"D:\messageNote.txt",
-                FileMode.Create, FileAccess.Write);
-
-            binFormatter.Serialize(f, textBoxNote.Text);
+            using (var fileStream = new FileStream(@"D:\messageNote.txt",
+               FileMode.Open, FileAccess.Read))
+            {
+                textBoxNote.Text = (string)binFormatter.Deserialize(fileStream);
+            }
         }
 
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             
+
         }
     }
 }

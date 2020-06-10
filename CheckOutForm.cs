@@ -268,8 +268,7 @@ namespace HotelMenagementSystem
             
             FileSaver.CreateFile(path, productsList1, totalBill1);
         }
-      
-    
+
         
     }
 }

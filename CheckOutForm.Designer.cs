@@ -292,6 +292,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CheckOutForm";
             this.Text = "CheckOutForm";
+            //this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CheckOutForm_FormClosing);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
