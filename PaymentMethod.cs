@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace HotelMenagementSystem
 {
-    public abstract class PaymentMethod : CheckOutForm
+    public abstract class PaymentMethod 
     {
         public virtual void ShowMessage()
         {
@@ -16,6 +16,6 @@ namespace HotelMenagementSystem
         }
     }
 
-    
+
 
 }

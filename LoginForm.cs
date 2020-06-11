@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
-using CafeManagementSystem.Properties;
-using MySql.Data;
-using System.Configuration;
 using System.Runtime.Serialization.Formatters.Binary;
 
 namespace HotelMenagementSystem
@@ -77,11 +68,18 @@ namespace HotelMenagementSystem
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            var binFormatter = new BinaryFormatter();
-            using (var fileStream = new FileStream(@"D:\messageNote.txt",
-               FileMode.Open, FileAccess.Read))
+            if (File.Exists(@"D:\messageNote.txt"))
             {
-                textBoxNote.Text = (string)binFormatter.Deserialize(fileStream);
+                var binFormatter = new BinaryFormatter();
+                using (var fileStream = new FileStream(@"D:\messageNote.txt",
+                   FileMode.Open, FileAccess.Read))
+                {
+                    textBoxNote.Text = (string)binFormatter.Deserialize(fileStream);
+                }
+            }
+            else
+            {
+                return;
             }
         }
 

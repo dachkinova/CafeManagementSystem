@@ -1,18 +1,13 @@
 ﻿using CafeManagementSystem;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Configuration;
 using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HotelMenagementSystem
@@ -26,6 +21,8 @@ namespace HotelMenagementSystem
         }
 
         public List<Product> productsList1;
+
+
 
         public string totalBill1 { get; set; }
 
@@ -105,21 +102,12 @@ namespace HotelMenagementSystem
                 }
             }
         }
-
         private void buttonReset_Click(object sender, EventArgs e)
         {
             listView2.Clear();
             totalBillBox.Clear();
         }
-        public bool IsDublicated()
-        {
-            var q = productsList1.GroupBy(x => x)
-               .Select(g => new { Value = g.Key, Count = g.Count() })
-               .OrderByDescending(x => x.Count);
-
-            return true;
-        }
-
+       
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int iSelectedIndex = checkedListBox1.SelectedIndex;
@@ -133,15 +121,6 @@ namespace HotelMenagementSystem
         private void buttonPay_Click(object sender, EventArgs e)
         {
             totalBill1 = totalBillBox.Text;
-
-            //int count = 0;
-            //count++;
-
-
-            //if (count == 1)
-            //{
-            //    button4.Enabled = false;
-            //}
 
             if (checkedListBox1.GetItemCheckState(0) == CheckState.Checked)
             {
@@ -243,7 +222,8 @@ namespace HotelMenagementSystem
 
         private void GetDublicatedItems()
         {
-            var list1 = productsList1.GroupBy(x => x.Name)
+            var list1 = productsList1
+                .GroupBy(x => x.Name)
                 .Distinct()
                 .Select(g => new
                 {
@@ -268,8 +248,6 @@ namespace HotelMenagementSystem
             
             FileSaver.CreateFile(path, productsList1, totalBill1);
         }
-
-        
     }
 }
 

@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HotelMenagementSystem
@@ -16,11 +12,16 @@ namespace HotelMenagementSystem
     public partial class Form1 : Form
     {
         public string userName1 { get; internal set; }
+
         public List<Product> productsList;
+
         public Form1(string userName)
         {
             this.userName1 = userName;
+
+               
             productsList = new List<Product>();
+
             if (productsList != null)
             {
                 foreach (var pr in productsList)
@@ -47,18 +48,18 @@ namespace HotelMenagementSystem
             //int count = 0;
             //count++;
 
-            Product[] arr = new Product[productsList.Count];
-            productsList.CopyTo(arr, 0);
+            //Product[] arr = new Product[productsList.Count];
+            //productsList.CopyTo(arr, 0);
 
-            for (int i = 0; i < arr.Length; i++)
-            {
-                byte[] lineBytes = Encoding.UTF8.GetBytes(arr[i].ToString());
-                f.Write(lineBytes, 0, lineBytes.Length);
-                string newLine = "\n";
-                byte[] newLineBytes = Encoding.UTF8.GetBytes(newLine);
-                f.Write(newLineBytes, 0, newLine.Length);
-            }
-            f.Close();
+            //for (int i = 0; i < arr.Length; i++)
+            //{
+            //    byte[] lineBytes = Encoding.UTF8.GetBytes(arr[i].ToString());
+            //    f.Write(lineBytes, 0, lineBytes.Length);
+            //    string newLine = "\n";
+            //    byte[] newLineBytes = Encoding.UTF8.GetBytes(newLine);
+            //    f.Write(newLineBytes, 0, newLine.Length);
+            //}
+            //f.Close();
 
             //int count = 0;
             //count++;
@@ -76,10 +77,7 @@ namespace HotelMenagementSystem
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            //using (LoginForm login = new LoginForm())
-            //{
                 labelUser.Text = userName1;
-            //}
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
