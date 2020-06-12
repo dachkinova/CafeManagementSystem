@@ -31,6 +31,9 @@
             System.Windows.Forms.ColumnHeader Product;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CheckOutForm));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.labelSign = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.buttonSaveToFile = new System.Windows.Forms.Button();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.buttonPay = new System.Windows.Forms.Button();
@@ -64,6 +67,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(204)))), ((int)(((byte)(222)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.labelSign);
+            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.buttonSaveToFile);
             this.panel2.Controls.Add(this.checkedListBox1);
             this.panel2.Controls.Add(this.buttonPay);
@@ -77,6 +83,42 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(310, 349);
             this.panel2.TabIndex = 3;
+            // 
+            // labelSign
+            // 
+            this.labelSign.AutoSize = true;
+            this.labelSign.BackColor = System.Drawing.SystemColors.Control;
+            this.labelSign.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSign.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelSign.Location = new System.Drawing.Point(235, 27);
+            this.labelSign.Name = "labelSign";
+            this.labelSign.Size = new System.Drawing.Size(20, 24);
+            this.labelSign.TabIndex = 28;
+            this.labelSign.Text = "$";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "BGN",
+            "EUR",
+            "USD"});
+            this.comboBox1.Location = new System.Drawing.Point(32, 76);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(104, 21);
+            this.comboBox1.TabIndex = 27;
+            this.comboBox1.Text = "Select currency:";
+            // 
+            // button1
+            // 
+            this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button1.Location = new System.Drawing.Point(171, 75);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 21);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Convert";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonSaveToFile
             // 
@@ -98,7 +140,7 @@
             this.checkedListBox1.Items.AddRange(new object[] {
             "By cash",
             "With card"});
-            this.checkedListBox1.Location = new System.Drawing.Point(191, 102);
+            this.checkedListBox1.Location = new System.Drawing.Point(191, 120);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(83, 34);
             this.checkedListBox1.TabIndex = 14;
@@ -111,7 +153,7 @@
             this.buttonPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonPay.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonPay.Location = new System.Drawing.Point(32, 161);
+            this.buttonPay.Location = new System.Drawing.Point(32, 180);
             this.buttonPay.Name = "buttonPay";
             this.buttonPay.Size = new System.Drawing.Size(242, 26);
             this.buttonPay.TabIndex = 13;
@@ -135,28 +177,28 @@
             // totalBillBox
             // 
             this.totalBillBox.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
-            this.totalBillBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.totalBillBox.Location = new System.Drawing.Point(178, 37);
+            this.totalBillBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.totalBillBox.Location = new System.Drawing.Point(171, 26);
             this.totalBillBox.Name = "totalBillBox";
             this.totalBillBox.ReadOnly = true;
-            this.totalBillBox.Size = new System.Drawing.Size(96, 22);
+            this.totalBillBox.Size = new System.Drawing.Size(103, 26);
             this.totalBillBox.TabIndex = 9;
-            this.totalBillBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(39, 39);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(28, 26);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 20);
+            this.label4.Size = new System.Drawing.Size(81, 20);
             this.label4.TabIndex = 8;
             this.label4.Text = "Total bill:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // buttonReset
             // 
             this.buttonReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonReset.Location = new System.Drawing.Point(32, 221);
+            this.buttonReset.Location = new System.Drawing.Point(32, 235);
             this.buttonReset.Name = "buttonReset";
             this.buttonReset.Size = new System.Drawing.Size(104, 45);
             this.buttonReset.TabIndex = 3;
@@ -167,7 +209,7 @@
             // buttonRemoveProduct
             // 
             this.buttonRemoveProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRemoveProduct.Location = new System.Drawing.Point(171, 221);
+            this.buttonRemoveProduct.Location = new System.Drawing.Point(171, 235);
             this.buttonRemoveProduct.Name = "buttonRemoveProduct";
             this.buttonRemoveProduct.Size = new System.Drawing.Size(103, 45);
             this.buttonRemoveProduct.TabIndex = 2;
@@ -179,7 +221,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(29, 102);
+            this.label1.Location = new System.Drawing.Point(29, 120);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 16);
             this.label1.TabIndex = 0;
@@ -292,7 +334,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CheckOutForm";
             this.Text = "CheckOutForm";
-            //this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CheckOutForm_FormClosing);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -324,5 +365,8 @@
         private System.Drawing.Printing.PrintDocument printDocument;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
         private System.Windows.Forms.Button buttonSaveToFile;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label labelSign;
     }
 }

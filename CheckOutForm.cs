@@ -248,6 +248,50 @@ namespace HotelMenagementSystem
             
             FileSaver.CreateFile(path, productsList1, totalBill1);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Plase select currency.");
+            }
+            else if (comboBox1.SelectedItem.ToString() == "BGN")
+            {
+                labelSign.Text = "лв";
+                double money = 0;
+
+                foreach (Product pr in productsList1)
+                {
+                    money += pr.price;
+                }
+                Currency curr = new BGN();
+                double convertedSum = curr.ConvertPrice(money);
+                totalBillBox.Text = (string.Format("{0:f2}", convertedSum));
+            }
+            else if (comboBox1.SelectedItem.ToString() == "EUR")
+            {
+                labelSign.Text = "€";
+                double money = 0;
+                foreach (Product pr in productsList1)
+                {
+                    money += pr.price;
+                }
+                Currency curr = new EUR();
+                double convertedSum = curr.ConvertPrice(money);
+                totalBillBox.Text = (string.Format("{0:f2}", convertedSum));
+            }
+            else if (comboBox1.SelectedItem.ToString() == "USD")
+            {
+                labelSign.Text = "$";
+                totalBillBox.Text = totalBill1;
+            }
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

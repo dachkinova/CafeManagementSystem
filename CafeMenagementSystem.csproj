@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BGN.cs" />
     <Compile Include="ByCardPayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,7 +88,9 @@
     <Compile Include="CheckOutForm.Designer.cs">
       <DependentUpon>CheckOutForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Currency.cs" />
     <Compile Include="Espresso.cs" />
+    <Compile Include="EUR.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
